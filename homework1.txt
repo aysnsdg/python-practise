@@ -1,0 +1,273 @@
+#task1
+"""
+defter_sayi=12
+defter_qiymeti=0.5
+karandas_sayi=5
+karandas_qiymeti=0.2
+total_price=defter_sayi*defter_qiymeti+karandas_sayi*karandas_qiymeti
+print(total_price)
+"""
+#task2
+"""minute=int(input("Minute="))
+hour=minute//60
+extra_minute=minute%60
+if hour==0:
+    print(extra_minute,"minutes")
+else:
+    print(hour,"hours",extra_minute,"minutes")
+"""
+#task3
+"""number=int(input("number="))
+r1=number//1000
+r2=number//100%10
+r3=number//10%10
+r4=number%10
+sum_of_digits=r1+r2+r3+r4
+product=r1*r2*r3*r4
+print("sum=",sum_of_digits,"product",product)
+"""
+#task4
+"""from math import *
+s1=float(input("Side1="))
+s2=float(input("Side2="))
+s3=float(input("Side3="))
+s=(s1+s2+s3)/2
+s_ucbucaq=sqrt(s*(s-s1)*(s-s2)*(s-s3))
+print(round(s_ucbucaq,2))
+"""
+#task5
+"""from math import *
+a=int(input("musbet eded daxil edin="))
+b=int(input("musbet eded daxil edin="))
+sum_ab=a+b
+minus_ab=a-b
+product=a*b
+qaliq=a%b
+tam=a//b
+quvvet=a**b
+logaritm=log(a,10)
+print(sum_ab,minus_ab,product,tam,qaliq,quvvet,logaritm)
+"""
+#task6
+"""
+number=int(input("enter the number="))
+s=number*(number+1)/2
+print(s)
+"""
+#task7
+"""from math import *
+s=int(input("terefin uzunlugunu daxil edin:"))
+n=int(input("terefin sayini daxil edin:"))
+x=pi/n
+A=(n*s**2)/(4*tan(x))
+print(A)
+"""
+#task8
+"""t=int(input("tempereture(c)="))
+f=t*1.8+32
+print(round(f,2),"Farenheit")
+"""
+#task9
+"""bread=int(input("number of loaves="))
+total_price=bread*3.49
+discount=total_price*0.4
+print(total_price,discount)
+"""
+#homework2
+#task1
+"""letter=input("Enter a letter of the alphabet!:")
+if letter=="e" or letter=="a" or letter=="i" or letter=="u" or letter=="o":
+    print("Entered alphabet is a vowel!")
+elif letter=="y":
+    print("Entered alphabet is a vowel, and sometimes it is a consonant!")
+else:
+    print("Entered alphabet is a consonant!")
+"""
+#task2
+"""ay=input("Enter name of the month:")
+gun=int(input("Enter the day:"))
+if ay=="April" or ay=="May":
+    print(ay,gun,"is in Spring")
+elif ay=="July" or ay=="August":
+    print(ay,gun,"is in Summer")
+elif ay=="October" or ay=="November":
+    print(ay,gun,"is in Fall")
+elif ay=="February" or ay=="January":
+    print(ay,gun,"is in Winter")
+elif ay=="March":
+    if gun>=20:
+         print(ay,gun,"is in Spring")
+    else:
+         print(ay,gun,"is in Winter")
+elif ay=="June":
+    if gun>=21:
+        print(ay,gun,"is in Summer")
+    else:
+        print(ay,gun,"is in Spring")
+elif ay=="September":
+    if gun>=22:
+        print(ay,gun,"is in Fall")
+    else:
+        print(ay,gun,"is in Summer")
+else:
+    if gun>=21:
+        print(ay,gun,"is in Winter")
+    else:
+        print(ay,gun,"is in Fall")
+"""
+#task3
+"""du=int(input("Enter the wavelength in nm:"))
+if du>=380 and du<450:
+    print("The relevant color is Violet")
+elif du>=450 and du<495:
+    print("The relevant color is Blue")
+elif du>=495 and du<570:
+    print("The relevant color is Green")
+elif du>=570 and du<590:
+    print("The relevant color is Yellow")
+elif du>=590 and du<620:
+    print("The relevant color is Orange")
+elif du>=620 and du<750:
+    print("The relevant color is Red")
+else:
+    print("Invalid input!")
+"""
+#task4
+
+#task5
+month=input("Enter a month:")
+day=int(input("Enter the day:"))
+if month=="December":
+    if day>=22 and day<=31:
+        print("Your zodiac sign is Capricorn")
+    elif 21>=day>=1:
+        print("Your zodiac sign is Sagittarius")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="January":
+    if day>=1 and day<=19:
+        print("Your zodiac sign is Capricorn")
+    elif 20<=day<=31:
+        print("Your zodiac sign is Aquarius")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="Febuary":
+    if 1<=day<=18:
+        print("Your zodiac sign is Aquarius")
+    elif 19<=day<=29:
+        print("Your zodiac sign is Pisces")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="March":
+    if 1<=day<=20:
+        print("Your zodiac sign is Pisces")
+    elif 21<=day<=31:
+        print("Your zodiac sign is Aries")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="April":
+    if 1<=day<=19:
+        print("Your zodiac sign is Aries")
+    elif 20<=day<=30:
+        print("Your zodiac sign is Taurus")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="May":
+    if 1<=day<=20:
+        print("Your zodiac sign is Taurus")
+    elif 21<=day<=31:
+        print("Your zodiac sign is Gemini")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="June":
+    if 1<=day<=20:
+        print("Your zodiac sign is Gemini")
+    elif 21<=day<=30:
+        print("Your zodiac sign is Cancer")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="July":
+    if 1<=day<=22:
+        print("Your zodiac sign is Cancer")
+    elif 23<=day<=31:
+        print("Your zodiac sign is Leo")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="August":
+    if 1<=day<=22:
+        print("Your zodiac sign is Leo")
+    elif 23<=day<=31:
+        print("Your zodiac sign is Virgo")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="September":
+    if 1<=day<=22:
+        print("Your zodiac sign is Virgo")
+    elif 23<=day<=30:
+        print("Your zodiac sign is Libra")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="October":
+    if 1<=day<=22:
+        print("Your zodiac sign is Libra")
+    elif 23<=day<=31:
+        print("Your zodiac sign is Scorpio")
+    else:
+        print("Either a month or a day is invalid!")
+elif month=="November":
+    if 1<=day<=21:
+        print("Your zodiac sign is Scorpio")
+    elif 22<=day<=30:
+        print("Your zodiac sign is Sagittarius")
+    else:
+        print("Either a month or a day is invalid!")
+#task6
+"""x=float(input("Enter x"))
+y=float(input("Enter y"))
+if x**2+y**2>=4 and x<=2 and x>0 and y>0 and y<x:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task7
+"""x=float(input("Enter x"))
+y=float(input("Enter y"))
+if y>=(x-2)**2-3 and x>abs(y)and y>0 or y>=(x-2)**2-3 and abs(y)>x and y<0:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task8
+"""x=float(input("Enter x"))
+y=float(input("Enter y"))
+if y<=x**2 and y>2-x and x<0 or y<=x**2 and y<2-x and y>0 and x>0:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task9
+"""x=float(input("Enter x"))
+y=float(input("Enter y"))
+if x**2+y**2<=1 and x>0 and y>0 and y>x:
+    print("The point is in the shaded area")
+elif x**2+y**2<=1 and x<0 and y>0 and y>-x:
+    print("The point is in the shaded area")
+elif x**2+y**2<=1 and x<0 and y<0 and y>x:
+    print("The point is in the shaded area")
+elif x**2+y**2>=1 and x<0 and y<0 and y<x or x**2+y**2>=1 and x>0 and y<0 and y<-x:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task10
+"""x=float(input("Enter x "))
+y=float(input("Enter y "))
+if y>=x**2 and x>0 and y>=4-x**2 or  /
+y>=x**2 and y<=4-x**2 and x<0 and y<2-x /
+y<=x**2 and y>=4-x**2 and y<2-x and x>0 and y>0 /
+y<=x**2 and y>=4-x**2 and x<0 and y>2-x:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+
