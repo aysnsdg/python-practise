@@ -1,0 +1,261 @@
+#task1
+def cem():
+    s=0
+    i=1
+    while i==1:
+        x=int(input("enter num:"))
+        if x!=-1:
+            s+=x
+        else:
+            i=0
+    return s
+def check():
+    if cem()%2==0:
+        return "cut"
+    return "tek"
+print(check())
+
+#task2
+def check(a,b):
+    if b!=0 and (a/b)%2==0:
+        return True
+    return False
+a=int(input("enter a:"))
+b=int(input("enter b:"))
+print(check(a,b))
+
+#task3
+def check(n,k):
+    if k**k==n:
+        return True
+    return False
+n=int(input("enter n:"))
+k=int(input("enter k:"))
+print(check(n,k))
+
+#task4
+def check(p):
+    lamp=0
+    i=1
+    while lamp==0:
+        if p==i*(i+1):
+            lamp=1
+        else:
+            i+=1
+    if lamp==1:
+        return True
+    return False
+p=int(input("enter number:"))
+if check(p):
+    print("pronic")
+else:
+    print("heteromecic")
+
+#task5
+def check(p):
+    n=0
+    if p!=0:
+        if p<0:
+            p=abs(p)
+        while p!=0:
+            n+=1
+            p//=10
+        return n
+    else:
+        return 1
+    
+p=int(input("enter number:"))
+print(check(p))
+
+#task6
+def check(n):
+    l=len(str(n))
+    r=0
+    for i in range(l):
+        r=r+(n%10)**l
+        l-=1
+        n//=10
+    if r==copy:
+        return True
+    return False
+N=int(input("enter number:"))
+copy=N
+if check(N):
+    print("Disarium")
+else:
+    print("Disarium deyil")
+    
+#task7
+
+def check(N):
+    if (2**N+1)%(2*N+1)==0:
+        return True
+    return False
+
+N=int(input("enter number:"))
+if check(N):
+    print("cirzon")
+else:
+    print("non-cirzon")
+
+#task8
+
+def factorial(n):
+    i=1
+    f=1
+    while f%n!=0:
+        i+=1
+        f*=i
+    return i
+
+number=int(input("Natural eded daxil edin:"))
+print(str(factorial(number))+"!")
+
+#task9
+
+from math import *
+def sade(n):
+    if n==1:
+        return False
+    for i in range(2,int(sqrt(n))+1):
+        if n%i==0:
+            return False
+    else:
+        return True
+def cem(n):
+    s=0
+    while n!=0:
+        r=n%10
+        s+=r
+        n//=10
+    return s
+number=int(input("Natural eded daxil edin:"))
+sum_of_digits=cem(number)
+if number%sum_of_digits==0 and sade(number//sum_of_digits):
+    print("Moran")
+else:
+    print("non-Moran")
+
+#task10
+
+from math import *
+def check(n):
+    r=n%10
+    n//=10
+    while n>9:
+        n//=10
+    if sqrt(r+n)>3:
+        return True
+    return False
+n=int(input("enter number:"))
+if check(n):
+    print("yes")
+else:
+    print("no")
+
+#task11
+
+from math import *
+def qarsade(n1,n2):
+    for i in range(2,int(sqrt(n1))+1):
+        if n1%i==0 and n2%i==0:
+            return False
+    else:
+        return True
+n1,n2=map(int,input("Iki natural eded daxil edin:").split())
+if qarsade(n1,n2):
+    print(n1,"ve",n2,"qarsiliqli sade ededlerdir.")
+else:
+    print(n1,"ve",n2,"qarsiliqli sade ededler deyil.")
+
+#task12
+
+from math import *
+def sade(n):
+    if n==1:
+        return False
+    for i in range(2,int(sqrt(n))+1):
+        if n%i==0:
+            return False
+    else:
+        return True
+
+n=int(input("Natural eded daxil edin:"))
+copy=n
+while n!=0:
+    if sade(n):
+        n//=10
+    else:
+        print(copy,"ededi hiper-sade deyil.")
+        break
+else:
+    print(copy,"ededi hiper-sadedir.")
+
+#task13
+
+def ebob(a,b):
+    while a!=b:
+        if a>b:
+            a-=b
+        else:
+            b-=a
+    return a
+a,b=map(int,input("iki natural eded daxil edin:").split())
+print("EBOB(",a,",",b,")=",ebob(a,b))
+print("EKOB(",a,",",b,")=",(a*b)//ebob(a,b))
+
+#task14
+
+def artma(a,b,c):
+    if a>=b and a>=c:
+        n3=a
+        if b>=c:
+            n2=b
+            n1=c
+        else:
+            n2=c
+            n1=b
+    elif b>=a and b>=c:
+        n3=b
+        if a>=c:
+            n2=a
+            n1=c
+        else:
+            n2=c
+            n1=a
+    else:
+        n3=c
+        if a>=b:
+            n2=a
+            n1=b
+        else:
+            n2=b
+            n1=a
+    return n1,n2,n3
+num1,num2,num3=map(int,input("Uc natural eded daxil edin:").split())
+print(artma(num1,num2,num3))
+
+#task15
+
+from math import *
+def new(num1,num2):
+    for i in range(2,int(sqrt(num1))+1):
+        if num1%i==0 and num2%i==0:
+            num1//=i
+            num2//=i
+    newnum=str(num1)+"/"+str(num2)
+    return newnum
+num1,num2=map(int,input("Kesrin suret ve mexrecini daxil edin:").split())
+print(new(num1,num2))
+
+#task16
+
+def ters(n):
+    newn=0
+    while n!=0:
+        r=n%10
+        newn=newn*10+r
+        n//=10
+    return newn
+number=int(input("enter number:"))
+print(ters(number))
