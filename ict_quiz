@@ -1,0 +1,142 @@
+#task1
+
+maximum=0   
+number=int(input("Enter a number (N>0):"))
+while number!=1:
+    if number%2==0:
+        number//=2
+    else:
+        number=3*number+1
+    if number>maximum:
+        maximum=number
+print("Max number is:",maximum)
+
+#task3
+
+def bol(copy):
+    newr=""
+    while copy!=0:
+        r=copy%100
+        copy//=100
+        if not check(copy):
+            lamp=1
+        sonr=r%10
+        ilkr=r//10
+        newr=str(sonr)*ilkr+newr
+    return newr
+
+def check(number):
+    n=0
+    while number!=0:
+        n+=1
+        number//=10
+    if n%2==1:
+        return False
+    return True
+   
+number=int(input("Enter a number (N>0):"))
+lamp=0
+copy=number
+if not check(number):
+    print("invalid")
+else:
+    print(bol(number))
+
+#task4
+
+def ikilik(n):
+    r=""
+    while n!=0:
+        q=n%2
+        r=str(q)+r
+        n//=2
+    return r
+
+def is_palindrome(number):
+    lamp=0
+    if ikilik(number)[::-1]==ikilik(number) and str(number)[::-1]==str(number):
+        lamp=1
+    else:
+        if ikilik(number)[::-1]==ikilik(number) and not str(number)[::-1]==str(number):
+            lamp=2
+        elif not ikilik(number)[::-1]==ikilik(number) and str(number)[::-1]==str(number):
+            lamp=3
+
+    return lamp
+number=int(input("Enter a number (N>0):"))
+if is_palindrome(number)==1:
+    print("Palindrome type is decimal and binary")
+elif is_palindrome(number)==2:
+    print("Palindrome type is only binary")
+elif is_palindrome(number)==3:
+    print("Palindrome type is only decimal")
+else:
+    print("palindrome type is neither decimal nor binary")
+
+#task5
+
+def say(n):
+    uzunluq=0
+    while n!=0:
+        uzunluq+=1
+        n//=10
+    return uzunluq
+
+def np_to_k(n):
+    uzunluq=say(n)
+    copy=n
+    while n!=0:
+        reqem=(n%10)**(p+uzunluq-1)
+        n//=10
+        uzunluq-=1
+    return reqem/copy
+n=int(input("Enter n:"))
+p=int(input("Enter p(p>0):"))
+print(int(np_to_k(n)))
+
+
+#task2
+
+n=int(input("Enter n:"))
+def say(n):
+    l=0
+    while n!=0:
+        l+=1
+        n//=10
+    return l
+
+def sol(number):
+    l=say(number)
+    s=0
+    while number!=0:
+        r=number%10
+        s=s+l*r
+        number//=10
+        l-=1
+    return s
+def sag(number):
+    number=int(str(number)[::-1])
+    l=say(number)
+    c=0
+    while number!=0:
+        r=number%10
+        c=c+l*r
+        number//=10
+        l-=1
+    return c
+if sag(n)==sol(n):
+    print("True")
+else:
+    print("False")
+          
+
+
+
+
+
+
+
+
+
+
+
