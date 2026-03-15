@@ -1,0 +1,168 @@
+#task1
+"""
+def check(n):
+    cem=0
+    for i in range(1,n):
+        if n%i==0:
+            cem+=i
+    return cem
+
+x=int(input("enter number x:"))
+y=int(input("enter number y:"))
+total=0
+
+for i in range(x,y+1):
+    if check(i)==i:
+        print("mukemmel ededdir",i)
+        total+=1
+
+print("total found:",total)
+"""
+#task2
+"""
+def cem(x):
+    s=0
+    while x!=0:
+        s+=x%10
+        x//=10
+    return s
+
+num=int(input("Enter a number"))
+step=0
+l=0
+while num!=1:
+    if num%cem(num)==0:
+        num=num//cem(num)
+        print(num)
+        step+=1
+    else:
+        l=1
+
+print("Total chain length: ",step)
+"""
+
+#task3
+"""
+def ikilik(x):
+    r=0
+    while x!=0:
+        q=x%2
+        r=r*10+q
+        x=(x-q)//2
+    return r
+
+def say(k):
+    n=0
+    while k!=0:
+        r=k%10
+        if  r==1:
+            n+=1
+        k//=10
+    return n
+
+def boyuk(q):
+    m=0
+    while q!=0:
+        if m<q%10:
+            m=q%10
+        q//=10
+    return m
+
+num=int(input("enter number:"))
+if say(ikilik(num))==boyuk(num):
+    print("Result: True. It is a Dominant Trip number.")
+else:
+    print("Result: False. It is not a Dominant Trip number.")
+"""
+
+#task4
+"""
+from math import *
+def sade(x):
+    if x==1:
+        return False
+    for i in range(2,int(sqrt(x))+1):
+        if x%i==0:
+            return False
+    return True
+
+def yeni(x):
+    copy=x
+    while x>9:
+        x//=10
+    new=copy*10+x
+    return new
+
+def binary_weight_type(x):
+    r=0
+    n=0
+    while x!=0:
+        q=x%2
+        r=r*10+q
+        x=(x-q)//2
+    
+    while r!=0:
+        k=r%10
+        if  k==1:
+            n+=1
+        r//=10
+        
+    if n>0 and n%2==0:
+        return 2
+    elif n>0 and n%2!=0:
+        return 1
+    return 0
+
+def check(n):
+    cem=0
+    for i in range(1,n):
+        if n%i==0:
+            cem+=i
+    if n%cem==0:
+        return True
+    return False
+
+num=int(input("enter number:"))
+if sade(num) and sade(yeni(num)):
+    print("Cat A")
+elif binary_weight_type(num)==2 and not sade(num):
+    print("Cat B")
+elif check(num):
+    print("Cat C")
+else:
+    print("Heç bir xüsusiyyət tapılmadı")
+"""
+#task5
+
+def fac(x):
+    f=1
+    for i in range(1,x+1):
+        f*=i
+    return f
+
+def kvcemi(x):
+    cem=0
+    while x!=0:
+        cem+=(x%10)**2
+        x//=10
+    return cem
+
+def check(cem):
+    r=kvcemi(cem)
+    while r==4:
+        r=kvcemi(r)
+        return False
+    return True
+
+num=int(input("enter number:"))
+cem=0
+
+while num!=0:
+    r=num%10
+    cem+=fac(r)
+    num//=10
+if check(cem):
+    print("true")
+else:
+    print("false")
+        
