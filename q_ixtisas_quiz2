@@ -1,0 +1,123 @@
+#task1
+"""
+x=float(input())
+y=float(input())
+if x**2+y**2<=25 and y<=2*x-3 and y>=sin(x) or x**2+y**2<=25 and y<=sin(x) and y>=2*x-3 and y>=-3:
+    print("daxildedir")
+else:
+    print("daxil deyir")
+"""
+
+#task2
+"""
+from math import *
+def sade(x):
+    if x==1:
+        return False
+    for i in range(2,int(sqrt(x))+1):
+        if x%i==0:
+            return False
+    return True
+
+n=int(input("enter n: "))
+l=0
+s=0
+while l==0:
+    r=int(input("enter number: "))
+    if sade(r):
+        s+=r
+    else:
+        l=1
+print(s)
+"""
+
+#task3
+
+"""
+def cem(n):
+    s=0
+    while n!=0:
+        s+=n%10
+        n//=10
+    return s
+number=int(input('enter number'))
+r=cem(number)
+step=1
+
+while r>9:
+    step+=1
+    r=cem(r)
+print("reqem koku:",r)
+print("addim sayi:",step)
+"""
+
+#task4
+"""
+def say(x):
+    n=0
+    while x!=0:
+        n+=1
+        x//=10
+    return n
+
+x=int(input("enter x:"))
+y=int(input("enter y:"))
+
+total=0
+
+for i in range(x,y+1):
+    s=say(i)
+    copy=i
+    cem=0
+    
+    while i!=0:
+        cem+=(i%10)**s
+        i//=10
+        
+    if cem==copy:
+        print(copy)
+        total+=1
+    
+print(total)
+"""
+
+#task5
+"""
+def ikilik(x):
+    r=0
+    while x!=0:
+        q=x%2
+        r=r*10+q
+        x=(x-q)//2
+    return r
+
+def sekkizlik(x):
+    r=0
+    while x!=0:
+        q=x%8
+        r=r*10+q
+        x=(x-q)//8
+    return r
+
+def say(x):
+    n=0
+    while x!=0:
+        r=x%10
+        if  r==1:
+            n+=1
+        x//=10
+    return n
+
+def cem(x):
+    s=0
+    while x!=0:
+        s+=x%10
+        x//=10
+    return s
+
+num=int(input("enter number:"))
+if cem(sekkizlik(num))==say(ikilik(num)):
+    print("yes")
+else:
+    print("no")
+"""
