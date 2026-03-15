@@ -1,0 +1,139 @@
+#task1
+"""
+x=float(input("X koordinatını daxil edin:"))
+y=float(input("Y koordinatını daxil edin:"))
+if x**2+y**2<=1 and y>=0.5 and y>=abs(2*x) and y>=6*(x**2):
+    print("noqte: (",x,",",y,")")
+    print("Netice: Noqte qirmizi rengli oblasta DAXILDIR.")
+else:
+     print("noqte: (",x,",",y,")")
+     print("Netice: Noqte qirmizi rengli oblasta DAXILDIR DEYIL.")
+"""
+
+#task2
+"""
+from math import *
+def sade(x):
+    if x==1:
+        return False
+    for i in range(2,int(sqrt(x)+1)):
+        if x%i==0:
+            return False
+    return True
+s=0
+l=0
+while l==0:
+    number=int(input("Enter a number: "))
+    if sade(number):
+        s+=number
+        print( number ,"sadedir, davam edirik...")
+    else:
+        l=1
+        print( number ,"sade deyil, proqram dayanir!")
+        print("Total sum of prime numbers: ", s)
+"""        
+
+#task3
+"""
+def say(x):
+    n=0
+    while x!=0:
+        n+=1
+        x//=10
+    return n
+def cem(x):
+    s=0
+    while x!=0:
+        s+=x%10
+        x//=10
+    return s
+number=int(input("Enter a number: "))
+r=number
+step=1
+while say(cem(r))!=1:
+    step+=1
+    root=say(cem(r))
+    r=cem(r)
+else:
+    print("Digital root:",root)
+    print("Total steps:" ,step)
+"""
+
+#task4
+"""
+def ikilik(x):
+    r=0
+    while x!=0:
+        q=x%2
+        r=r*10+q
+        x=(x-q)//2
+    return r
+
+def say(x):
+    n=0
+    while x!=0:
+        if x%10==1:
+            n+=1
+        x//=10
+    return n
+
+number=int(input("Enter a number: "))
+sonreqem=number%10
+bin_version=ikilik(number)
+say=say(bin_version)
+print("Last digit: ",sonreqem)
+print("Binary ones count: ",say)
+if say==sonreqem:
+    print("Result: True It is a Mirror number.")
+else:
+    print("Result: False It is not a Mirror number.")
+"""
+
+#task5
+"""
+from math import *
+def sade(x):
+    if x==1:
+        return False
+    for i in range(2,int(sqrt(x)+1)):
+        if x%i==0:
+            return False
+    return True
+
+def ikilik(x):
+    r=0
+    while x!=0:
+        q=x%2
+        r=r*10+q
+        x=(x-q)//2
+    return r
+
+def say(x):
+    n=0
+    while x!=0:
+        if x%10==1:
+            n+=1
+        x//=10
+    return n
+
+def cem(x):
+    s=0
+    while x!=0:
+        s+=x%10
+        x//=10
+    return s
+
+number=int(input("Enter a number (N): "))
+if sade(number) and say(ikilik(number))%2==1:
+    print("1. Orjinal eded (",number,")sadedir? BELI")
+    print("2. ",number,"-un binary formasi(",ikilik(number),") nece dene '1' saxlayir? ",say(ikilik(number)),"(Tekdir).")
+    print("NETICE: Seviyye 1 suzgecden kecdi!")
+else:
+    if cem(number)%5==0:
+      print("1. Orjinal eded (",number,")murekkebdir? BELI")
+      print("2. reqemleri cemi 5-e qaliqsiz bolunur? ",cem(number),"beli")
+      print("NETICE: Seviyye 2 suzgecden kecdi!")
+    else:
+        if say(ikilik(number))>3:
+            print("NETICE: Seviyye 3 suzgecden kecdi!")
+"""   
