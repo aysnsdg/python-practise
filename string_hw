@@ -1,0 +1,146 @@
+#task1
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+text=input("enter text:")
+simvol=input("enter symbol:")
+l=uzunluq(text)
+for i in range(l):
+    if text[i]==simvol:
+        print("yes")
+        break
+else:
+    print("no")
+
+#task2
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+text=input("enter text:")
+l=uzunluq(text)
+newtext=""
+for i in range(l):
+    if text[i]=="a":
+        newtext+="b"
+    elif text[i]=="A":
+        newtext+="B"
+    elif text[i]=="b":
+        newtext+="a"
+    elif text[i]=="B":
+        newtext+="A"
+    else:
+        newtext+=text[i]
+print(newtext)
+
+#task3
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    L=[]
+    word=""
+    for i in range(l):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            L+=[word]
+    L+=[word]
+    return L
+
+text=input("enter text:")
+l=uzunluq(text)
+L=siyahi(text)
+print(uzunluq(L))
+
+#task4
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    l=[]
+    word=""
+    for i in range(uzunluq(s)):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+    return l
+
+def maximum(l):
+    m=0
+    for i in l:
+        if uzunluq(i)>m:
+            m=uzunluq(i)
+    return m
+
+def word(l):
+    for i in l:
+        if uzunluq(i)==maximum(l):
+            return i
+
+text=input("enter text:")
+l=siyahi(text)
+print(word(l),"uzunlugu",maximum(l))
+
+#task5
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    l=[]
+    word=""
+    for i in range(uzunluq(s)):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+    return l
+
+text=input("enter text:")
+l=siyahi(text)
+initials=l[1][0]+"."+l[2][0]+". "+l[0]
+print(initials)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
