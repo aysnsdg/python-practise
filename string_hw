@@ -122,6 +122,248 @@ text=input("enter text:")
 l=siyahi(text)
 initials=l[1][0]+"."+l[2][0]+". "+l[0]
 print(initials)
+#task6
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    word=""
+    l=[]
+    for i in range(uzunluq(s)):
+        if s[i]!="/":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+        l+=[word]
+    return l
+
+text=input("enter text:")
+l=siyahi(text)
+for i in l:
+    print(i)
+
+#task7
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+text=input("setir:")
+a=input("neyi evez edirik:")
+b=input("ne ile evez edirik:")
+newtext=""
+m=uzunluq(text)
+n=uzunluq(a)
+i=0
+while i<=m-n:
+    if text[i:i+n]==a:
+        newtext+=b
+        i=i+n-1
+    else:
+        newtext+=text[i]
+    i+=1
+print(newtext)
+
+#task8
+
+def uzunluq(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+text=input("enter text:")
+a=input("the word to search for:")
+m=uzunluq(text)
+n=uzunluq(a)
+count=0
+i=0
+while i<=m-n:
+    if text[i:i+n]==a:
+        count+=1
+        i=i+n-1
+    i+=1
+print(count)
+
+#task9
+
+def length(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    word=""
+    l=[]
+    for i in range(length(s)):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+    l+=[word]
+    return l
+
+def kicik(s):
+    news=""
+    for i in s:
+        if i>="A" and i<="Z":
+            news+=chr(ord(i)+32)
+        else:
+            news+=i
+    return news
+
+text=input("enter text:")
+a=input("word:")
+b=input("change with:")
+newtext=""
+m=siyahi(text)
+for i in m:
+    if kicik(i)==kicik(a):
+        newtext+=b
+    else:
+        newtext+=i
+    newtext+=" "
+print(newtext)
+
+#task10
+
+def length(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    word=""
+    l=[]
+    for i in range(length(s)):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+    l+=[word]
+    return l
+
+def kicik(s):
+    news=""
+    for i in s:
+        if i>="A" and i<="Z":
+            news+=chr(ord(i)+32)
+        else:
+            news+=i
+    return news
+
+text=input("enter text:")
+a=input("word:")
+b=input("change with:")
+newtext=""
+count=0
+m=siyahi(text)
+for i in m:
+    if kicik(i)==kicik(a):
+        newtext+=b
+        count+=1
+    else:
+        newtext+=i
+    newtext+=" "
+print(newtext)
+print(count)
+
+#task11
+
+def length(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    word=""
+    l=[]
+    for i in range(length(s)):
+        if s[i]!=" ":
+            word+=s[i]
+        else:
+            l+=[word]
+            word=""
+    l+=[word]
+    return l
+
+text=input("enter text:")
+new=""
+for i in siyahi(text):
+    new=new+i[0]+i[2::]+" "
+print(new)
+
+#task12
+
+text=input("enter text:")
+sait="AOUE"
+samit="bcmf"
+reqem="3579"
+durgu="!?,;"
+new=""
+for i in text:
+    if i in sait:
+        if i not in new:
+            new+="'"+i+"' "
+    elif i in samit:
+        if i not in new:
+            new+="'"+i+"' "
+    elif i in reqem:
+        if i not in new:
+            new+="'"+i+"' "
+    elif i in durgu:
+        if i not in new:
+            new+="'"+i+"' "
+new+="simvollari var"
+print(new)
+
+#task13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
