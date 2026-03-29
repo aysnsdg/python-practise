@@ -331,6 +331,140 @@ print(new)
 
 #task13
 
+def l(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    num=""
+    L=[]
+    for i in range(l(s)):
+        if s[i]!="+":
+            num+=s[i]
+        else:
+            L+=[num]
+            num=""
+    L+=[num]
+    return L
+
+text=input()
+cem=0
+for i in siyahi(text):
+    cem+=int(i)
+print(cem)
+
+#task14
+
+def l(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    num=""
+    L=0
+    for i in range(l(s)):
+        if s[i]!="+":
+            num+=s[i]
+        else:
+            if s[i]=="+":
+                L+=int(num)
+            else:
+                L-=int(num)
+            num=""
+    L+=[n
+    return L
+
+text=input()
+cem=0
+davam edilmelidir
+
+#task15
+
+def l(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    soz=""
+    L=[]
+    for i in range(l(s)):
+        if s[i]!=" ":
+            soz+=s[i]
+        else:
+            return soz
+    return soz
+text=input()
+print(siyahi(text))
+
+#task16
+"""
+def l(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def siyahi(s):
+    soz=""
+    L=[]
+    for i in range(l(s)):
+        if s[i]!=".":
+            soz+=s[i]
+        else:
+            L+=[soz]
+            soz=""
+    L+=[soz]
+    return L
+
+fayl=input("faylin adini daxil edin:")
+a=input("faylin yeni genislemesini daxil edin:")
+davam edilmelidir
+"""
+#task17
+def l(s):
+    n=0
+    for i in s:
+        n+=1
+    return n
+
+def check(text):
+    a="/\|><:*?'"
+    if l(text)<=10:
+        for i in text:
+            if i in a:
+                return False
+        return True
+    return False
+
+text=input()
+print(check(text))
+#task18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
