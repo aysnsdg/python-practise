@@ -389,7 +389,22 @@ list2 = [i for i in list1 if fibo(i)]
 print(list1)
 print(list2)
 
+#task28
+from random import choice
+
+def my_upper(s):
+    x=chr(ord(s[0])-32)+s[1::]
+    return x
+
+article_list = ["the", "a", "one", "some", "any"]
+noun_list = ["boy", "girl", "dog", "town" , "car"]
+verb_list = ["drove", "jumped", "ran", "walked" , "skipped"] 
+preposition_list = ["to", "from", "over", "under" , "on"] 
+sentence=my_upper(choice(article_list))+" "+choice(noun_list)+" "+choice(verb_list)+" "+choice(preposition_list)+" "+choice(article_list)+" "+choice(noun_list)+"."
+print(sentence)
+
 #task30
+
 l=[]
 f=input("fizika imt kecdinizmi? he/yox ")
 l+=[f]
