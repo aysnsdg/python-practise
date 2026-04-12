@@ -321,8 +321,22 @@ for i in range(1,num+1):
         list+=[i]
 print("List=",list)
 
-#task21
+#task19
+from math import *
 
+def silsile(n):
+    s=0
+    l=[i for i in range(1,n+1)]
+    for i in l:
+        s+=round((4*sin(i)+2*i)/(log(9*i,3)*(2**i)),2)
+    return s
+N=[6,2,5,3,9,7,4]
+mylist=[]
+for i in N:
+    mylist+=[silsile(i)]
+print("List= ",mylist)
+
+#task21
 from random import *
 A=[randint(-100,100)for i in range(8)]
 B=[]
@@ -337,20 +351,6 @@ for i in A:
 print(A)
 print(B)
 print("Musbet ededlerin sayi: ",n)
-
-#task19
-
-import math
-N=int(input("N daxil edin="))
-a=[i for i in range(1,N+1)]
-List=[]
-for i in a:
-    List+=[(4*math.sin(i)+2*i)/(math.log(9*i,3)*(2**i))]
-print(a)
-print(List)
-TAMAMLANMAYIBBB
-    
-
 
 
 
