@@ -367,6 +367,31 @@ print(A)
 print(B)
 print("Musbet ededlerin sayi: ",n)
 
+#task22
+
+def fibo(x):
+    if x == 0:
+        return True
+    
+    a, b = 0, 1
+    
+    while b <= x:
+        if b == x:
+            return True
+        a, b = b, a + b
+    
+    return False
+
+from random import *
+list1=[randint(0,100)for i in range(10)]
+list2=[]
+list2 = [i for i in list1 if fibo(i)]
+print(list1)
+print(list2)
+
+
+
+
 
 
 
