@@ -389,6 +389,32 @@ list2 = [i for i in list1 if fibo(i)]
 print(list1)
 print(list2)
 
+#task30
+l=[]
+f=input("fizika imt kecdinizmi? he/yox ")
+l+=[f]
+k=input("kimya imt kecdinizmi? he/yox ")
+l+=[k]
+r=input("riyaziyyat imt kecdinizmi? he/yox ")
+l+=[r]
+i=input("inglis imt kecdinizmi? he/yox ")
+l+=[i]
+a=input("ana dili imt kecdinizmi? he/yox ")
+l+=[a]
+
+n=0
+for i in l:
+    if i=="he":
+        n+=1
+
+if n==1:
+    print("pis")
+elif n==2:
+    print("kafi")
+elif n==3:
+    print("yaxshi")
+elif n==4 or n==5:
+    print("elaci")
 
 
 
