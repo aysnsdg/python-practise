@@ -335,6 +335,21 @@ mylist=[]
 for i in N:
     mylist+=[silsile(i)]
 print("List= ",mylist)
+#task20
+
+from math import *
+
+def silsile(n):
+    s=0
+    l=[i for i in range(n+1)]
+    for i in l:
+        s+=round(((cos(i**2+1)**i)**i)/((log(8,3)*((i+i**2)**i))),2)
+    return s
+N=[6,2,5,3,9,7,4]
+mylist=[]
+for i in N:
+    mylist+=[silsile(i)]
+print("List= ",mylist)
 
 #task21
 from random import *
