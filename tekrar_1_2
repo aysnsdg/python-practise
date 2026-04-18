@@ -1,0 +1,500 @@
+#lab1
+#task5
+"""
+from math import *
+a=int(input("ucbucagin 1ci terefi; "))
+b=int(input("ucbucagin 2ci terefi; "))
+c=int(input("aralarindaki bucag; "))
+s=a*b*sin(radians(c))
+print(s)
+"""
+#task8
+"""
+from random import *
+a=uniform(6.5,10.5)
+b=uniform(6.5,10.5)
+print(round(a*b,2))
+"""
+#task9
+"""
+from random import *
+a=randint(10000,99999)
+r1=a//10000
+print(r1,r1**2)
+r2=a//1000%10
+print(r2,r2**2)
+r3=a//100%10
+print(r3,r3**2)
+r4=a//10%10
+print(r4,r4**2)
+r5=a%10
+print(r5,r5**2)
+"""
+#task10
+"""
+from random import *
+from math import *
+x=randint(-1,1)
+y=randint(-1,1)
+a=round(sqrt(1+y**2)*sin(x**2/(1+abs(y))),3)
+b=round(cos(sin(5*x))**2/sqrt(abs(y)),3)
+print(a,b)
+"""
+#task11
+"""
+a=int(input("ucreqemli eded daxil edin: "))
+print(a//100,",",a//10%10,",",a%10)
+"""
+#hw1
+#task1
+"""
+ds=12
+dq=0.5
+ks=5
+kq=0.2
+print("notebook price: ",0.5,"azn")
+print("pencil price: ",0.2,"azn")
+print("12 notebooks and 5 pencils total prize: ",12*0.5+5*0.2,"azn")
+"""
+#task2
+"""
+minute=int(input("Minute: "))
+print(minute,"minutes = ",minute//60," hours ",minute%60," minutes")
+"""
+#task3
+"""
+num=int(input("Enter 4 digit number: "))
+a=num//1000
+b=num//100%10
+c=num//10%10
+d=num%10
+print("Digits: ",a,b,c,d)
+print("Sum of digits: ",a,"+",b,"+",c,"+",d,"=",a+b+c+d)
+print("Product of digits: ",a,"*",b,"*",c,"*",d,"=",a*b*c*d)
+"""
+#task4
+"""
+from math import *
+a=int(input("Side 1:"))
+b=int(input("Side 2:"))
+c=int(input("Side 3:"))
+p=(a+b+c)/2
+print("area of triangle",round(sqrt(p*(p-a)*(p-b)*(p-c)),2))
+"""
+#task5
+"""
+from math import *
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+print(a,"+",b,"=",a+b)
+print(a,"-",b,"=",a-b)
+print(a,"*",b,"=",a*b)
+print(a,"%",b,"=",a%b)
+print(a,"//",b,"=",a//b)
+print(a,"**",b,"=",a**b)
+print("log10(",a,")",log(6,10))
+"""
+#task6
+"""
+n=int(input("Enter a number: "))
+print("Result: ",(n*(n+1))/2)
+"""
+#task7
+"""
+from math import *
+s=int(input("Length: "))
+n=int(input("NUmber of sides: "))
+print("Area: ",(n*(s**2))/(4*tan(pi/n)))
+"""
+#task8
+"""
+t=int(input("Temperature (c): "))
+print(t,"Celsius = ",t*1.8+32,"Fahrenheit")
+"""
+#task9
+"""
+n=int(input("Number of loaves: "))
+print("Total price: ",n*3.49,"dollars")
+print("Discount",n*3.49*0.6,"dollars")
+"""
+#lab2
+#task3
+"""
+a=int(input("1th grade "))
+b=int(input("2nd grade "))
+c=int(input("3th grade "))
+o=(a+b+c)/3
+if o>=85:
+    print("Excellent")
+elif o>=75:
+    print("Very good")
+elif o>=65:
+    print("Good")
+elif o>=50:
+    print("Pass")
+else:
+    print("Fail")
+"""
+#task7
+"""
+a=int(input("1th grade "))
+b=int(input("2nd grade "))
+c=int(input("3th grade "))
+s=a+b+c
+if a==b and b==c:
+    print(s*3)
+else:
+    print(s)
+"""
+#task8
+"""
+a=int(input("1th grade "))
+b=int(input("2nd grade "))
+c=int(input("3th grade "))
+s=a+b+c
+if a==b or b==c or a==c:
+    print(0)
+else:
+    print(s)
+"""
+#task9
+"""
+from math import *
+a=int(input("1th grade "))
+b=int(input("2nd grade "))
+c=int(input("3th grade "))
+d=b**2-4*a*c
+if d>0:
+    print("2 koku var: ",(-b+sqrt(d))/(2*a),(-b-sqrt(d))/(2*a))
+elif d==0:
+    print("1 koku var: ",-b/(2*a))
+else:
+    print("heqiqi koku yoxdur")
+"""
+#task10
+"""
+n=int(input("mehsulun qiymeti: "))
+if n>1000:
+    print(n*0.9)
+"""
+#task11
+"""
+n=int(input("mehsulun qiymeti: "))
+if n>1000:
+    print(n*0.95)
+elif n>500:
+    print(n*0.97)
+"""
+#task13
+"""
+from random import *
+a=randint(0,100)
+b=randint(0,100)
+c=randint(0,100)
+if (a>b and b>c) or (c>b and b>a):
+    print(b)
+elif (a>c and c>b) or (b>c and c>a):
+    print(c)
+else:
+    print(a)
+"""
+#task16
+"""
+a=int(input("asifin yasi: "))
+v=int(input("vasifin yasi: "))
+g=int(input("agasifin yasi: "))
+if a>v and g>v:
+    print("vasif en balacadi")
+elif v>a and g>a:
+    print("asif en balacadi")
+elif a>g and v>g:
+    print("agasif en balacadi")
+    """
+#task17
+"""
+a=int(input("1ci teref: "))
+b=int(input("2ci teref: "))
+c=int(input("3ci teref: "))
+if a==b and b==c:
+    print("beraberterefli")
+elif a!b and b!=c and c!=a:
+    print("muxtelifterefli")
+else:
+    print("beraberyanlidi")
+"""
+#task18
+"""
+ds=iint(input("ses seviyyesi: "))
+if ds>130:
+    print("max seviyyeden yuksekdir")
+elif ds>106:
+    print("gas lawnmower ve jackhammer arasi")
+elif ds>70:
+    print("gas lawnmower ve alarm clock arasi")
+elif ds>40:
+    print("quiet room ve alarm clock arasi")
+else:
+    print("min seviyyeden asagidir")
+"""
+#task19
+"""
+n=int(input("il daxil edin: "))
+if n%400==0:
+    print("uzun il")
+elif n%4==0 and n%100!=0:
+    print("uzun il")
+else:
+    print("uzun il deyil")
+"""
+#task20
+"""
+n=float(input("magnitude: "))
+if n<2:
+    print("micro")
+elif n<3:
+    print("very minor")
+elif n<4:
+    print("minor")
+elif n<5:
+    print("light")
+elif n<6:
+    print("moderate")
+elif n<7:
+    print("strong")
+elif n<8:
+    print("major")
+elif n<9:
+    print("great")
+else:
+    print("metroric")
+"""
+#task21
+"""
+n=input("xana: ")
+herf="abcdefgh"
+cut="aceg1357"
+tek="bdfh2468"
+reqem="12345678"
+if n[0] not in herf and n[1] not in reqem:
+    print("ERRORR!!!")
+else:
+    if n[0] in cut and n[1] in cut:
+        print("qara")
+    elif n[1] in tek and n[1] in tek:
+        print("qara")
+    else:
+        print("ag")
+"""
+#task22
+#a
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (y>=x**2-2 and y<=x) or (y>x**2-2 and y<=-x):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#b
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (x**2 + y**2 <=1 and y>=x) or (x**2 + y**2 <=1 and y<=x and x<0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#c
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (x**2+y**2<=1 and y>=-x) or (x**2+y**2<=1 and y<=x and y<0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#d
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (y>=2*x**2 and y>=1-x ) or (y<=2*x**2 and y>=1-x and x<1 and x>0) :
+     print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#e
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (x**2+y**2<=1 and x>0 and y>=x-1 and y<=1) or (y<=1 and x**2+y**2>=1 and y>x-1 and x>0):
+     print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#f
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if x**2+y**2<=1 or (x**2+y**2>=1 and y<=1 and x<=1 and x>0 and y>0):
+     print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#g
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (y>1/x and y<=4-x and x>0) or (y<-x-4 and y<1/x and x<0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#h
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (y>=x**2 and y<=1) or (y<=-x**2 and y>=-1):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#j
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if x**2+y**2>=4 and y<x and x<0 and y<0 and y>-2:
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#k
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (y>=(x-2)**2-3 and y>=0 and abs(y)<x) or (y>=(x-2)**2-3 and abs(y)>x and y<0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#l
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (x**2+y**2<=25 and x<0 and y<0) or (x**2+y**2<=25 and y>x+2 and x<0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#m
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if (x**2+y**2<=1 and x>=0 and y<=0) or (x**2+y**2<=1 and y<=1-x and y>=0):
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#n
+"""
+x=float(input("enter x: "))
+y=float(input("enter y: "))
+if x**2+y**2<=1 and y>=x and y<=1 and x>=-1:
+    print("daxildedir")
+else:
+    print("daxilde deyil")
+"""
+#hw
+#task1
+"""
+a=input("Enter a letter of alphabet: ")
+if a=="a" or a=="e" or a=="i" or a=="u" or a=="o":
+    print("Entered alphabet is a constant!")
+elif a=="y":
+    print("Sometimes it is vowel, and sometimes it is a constant! ")
+else:
+    print("Entered nomber is a vowel!")
+"""
+#task4
+"""
+a=input("Enter the year: ")
+x=a%12
+if x==0:
+    print(a," is the year of the Dragon")
+elif x==1:
+    print(a," is the year of the Snake")
+elif x==2:
+    print(a," is the year of the Horse")
+elif x==3:
+    print(a," is the year of the Sheep")
+elif x==4:
+    print(a," is the year of the Monkey")
+elif x==5:
+    print(a," is the year of the Rooster")
+elif x==6:
+    print(a," is the year of the Dog")
+elif x==7:
+    print(a," is the year of the Pig")
+elif x==8:
+    print(a," is the year of the Rat")
+elif x==9:
+    print(a," is the year of the Ox")
+elif x==10:
+    print(a," is the year of the Tiger")
+else:
+    print(a," is the year of the Hare")
+"""
+#task6
+"""
+x=float(input("Enter x: "))
+y=float(input("Enter y: "))
+if x**2+y**2>=4 and x<=2 and y>0 and y<=x:
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task8
+"""
+x=float(input("Enter x: "))
+y=float(input("Enter y: "))
+if (y<=x**2 and y>=2-x and x<0) or (y<=x**2 and y<=2-x and x>0 and y>0):
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task9
+"""
+x=float(input("Enter x: "))
+y=float(input("Enter y: "))
+if (x**2+y**2<=1 and y>=-x and y>x) or (x**2+y**2>=1 and y<=x and y<=-x) or (x**2+y**2<=1 and y>=-x and y<=0) or (x**2+y**2<=1 and y>=x and y<=0):
+    print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+#task10
+"""
+x=float(input("Enter x: "))
+y=float(input("Enter y: "))
+if (y>=x**2 and y<=2-x and x<0 and y<=4-x**2) or (y>=x**2 and y>=4-x**2 and x>0) or (y<=x**2 and y>=2-x) or (y<=x**2 and y<=2-x and x>0 and y>0):
+     print("The point is in the shaded area")
+else:
+    print("The point is not in the shaded area")
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
