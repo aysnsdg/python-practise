@@ -485,4 +485,130 @@ while i<=n:
         print(i,end=" ")
     i+=1
 """
+#hw
+#task1
+"""
+n=int(input("Enter a number (n>0): "))
+m=n
+while n!=1:
+    print(n,end=" ")
+    if n%2==0:
+        n//=2
+    else:
+        n=n*3+1
+    if m<n:
+        m=n
+print(1)
+print("Max number: ",m)
+"""
+#task2
+"""
+def check(n):
+    i=1
+    copy=n%10
+    while n!=0:
+        print(copy,"%",i,"=",copy%i)
+        if copy%i!=0:
+            return False
+        n//=10
+        rem=n%10
+        copy=copy*10+rem
+        i+=1     
+    return True
+
+def reverse(num):
+    n=0
+    while num!=0:
+        n=n*10+num%10
+        num//=10
+    return n
+
+n=int(input("Enter a number (N>0): "))
+n=reverse(n)
+print(check(n))
+"""
+#task3
+"""
+def length(num):
+    n=0
+    while num!=0:
+        n+=1
+        num//=10
+    return n
+
+def look_and_say(num):
+    new=""
+    if length(num)%2==1:
+        return "invalid"
+    else:
+        while num!=0:
+            req=num%100
+            new=str(req%10)*(req//10)+new
+            num//=100
+    return new
+
+n=int(input("Enter a number (N>0): "))
+print(look_and_say(n))
+"""
+#task4
+"""
+def is_palindrome(n):
+    r=0
+    copy=n
+    while n!=0:
+        r=r*10+n%10
+        n//=10
+    if r==copy:
+        return True
+    return False
+
+def to_Binary(n):
+    r=0
+    p=1
+    while n!=0:
+        rem=n%2
+        r=r+p*rem
+        p*=10
+        n//=2
+    return r
+
+def palindrome_type(n):
+    b=to_Binary(n)
+    if is_palindrome(n) and is_palindrome(b):
+        return "Palindrome type is Decimal and Binary."
+    elif (not is_palindrome(n)) and (not is_palindrome(b)):
+        return "Palindrome type is neither Decimal nor Binary."
+    elif (not is_palindrome(n)) and is_palindrome(b):
+        return "Palindrome type is only Binary."
+    return "Palindrome type is only Decimal."
+
+n=int(input("Enter a number (N>0): "))
+print("Decimal: ",n)
+print("Binary: ",to_Binary(n))
+print(palindrome_type(n))
+"""
+#task5
+"""
+def reverse(num):
+    n=0
+    while num!=0:
+        n=n*10+num%10
+        num//=10
+    return n 
+
+def np_k(n,p):
+    r=0
+    copy=n
+    n=reverse(n)
+    while n!=0:
+        r=r+(n%10)**p
+        p+=1
+        n//=10
+    k=r/copy
+    return k
+
+n=int(input("Enter N: "))
+p=int(input("Enter P(p>0): "))
+print("K: ",np_k(n,p))
+"""
 
