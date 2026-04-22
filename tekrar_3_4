@@ -1,0 +1,488 @@
+#lab3
+#task1
+"""
+a=int(input("esase daxil edin: "))
+x=int(input("quvveti daxil edin: "))
+c=a
+print(a**x)
+for i in range(x-1):
+    a=a*c
+print(a)
+"""
+#task2
+"""
+a=int(input("Enter number: "))
+f=1
+for i in range(1,a+1):
+    f*=i
+print(f)
+"""
+#task3
+"""
+for i in range(1,51):
+    if i%2==0:
+        print(i)
+"""
+#task4
+"""
+n=int(input("Enter number: "))
+s=0
+for i in range(1,n+1):
+    s+=i
+print(s)
+"""
+#task5
+"""
+n=int(input("Enter number: "))
+s=0
+f=1
+k=1
+for i in range(1,n+1):
+    s=s+k*f
+    f*=n
+    k*=-1
+print(s)
+"""
+#task6
+"""
+for i in range(100,0,-1):
+    print(i)
+"""
+#task7
+"""
+for i in range(1,11):
+    print(i**2)
+"""
+#task8
+"""
+s=0
+h=1
+for i in range(1,11):
+    if i%2==0:
+        s+=i
+    else:
+        h*=i
+print("cem: ",s)
+print("hasil: ",h)
+"""
+#task9
+"""
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+c=int(input("enter c: "))
+for i in range(a,b+1):
+    if i%c==0:
+        print(i)
+"""
+#task10
+"""
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+sc=0
+st=0
+for i in range(a,b+1):
+    if i%2==0:
+        sc+=1
+    else:
+        st+=1
+print("cutlerin sayi: ",sc)
+print("teklerin sayi: ",st)
+"""
+#task11
+"""
+from random import *
+for i in range(10):
+    a=randint(1,100)
+    if a%2==0:
+        print(a,"cutdur")
+    else:
+        print(a,"tekdir")
+"""
+#task12
+"""
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+for i in range(a,b+1):
+    print(i,"*",i,"=",i**2)
+"""
+#task13
+"""
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+s=0
+for i in range(abs(a)):
+    s+=b
+print(s)
+"""
+#task14
+"""
+s=3
+k=1
+for i in range(2,16):
+    s+=4*k/(i*(i+1)*(i+2))
+    k*=-1
+print(s)
+"""
+#task15
+"""
+for i in range(10000,99999):
+    if i%133==125 and i%134==111:
+        print(i)
+"""
+#task16
+"""
+a=int(input("enter a: "))
+b=int(input("enter b: "))
+ebob=1
+for i in range(1,a+1):
+    if a%i==0 and b%i==0:
+        ebob=i
+print(ebob)
+"""
+#task17
+"""
+a,b=map(int,input("Intervalin serhedlerini daxil edin: ").split())
+a=int(input("enter A: "))
+b=int(input("enter B: "))
+lamp=0
+for i in range(a,b+1):
+    for j in range(2,i):
+        if i%j==0:
+            lamp=1
+    if lamp==0:
+        print(i,end=" ")
+    else:
+        lamp=0
+"""
+#task18
+"""
+count=0
+for x in range(0,185//15+1):
+    for y in range(0,185//17+1):
+        for z in range(0,185//21+1):
+            if x*15+y*17+z*21==185:
+                count+=1
+                print(x,y,z)
+print(count)
+"""
+#hw
+#task1
+"""
+print("Celsius","Fahrenheit",sep="\t")
+for i in range(0,101,10):
+    print(i,int(i*1.8+32),sep="\t")
+    print(f"{i:5}",f"{int(i*1.8+32):5}")
+"""
+#task2
+"""
+n=int(input("Max number to compute the average value: "))
+s=0
+if n>0:
+    for i in range(1,n+1):
+        print("Value ",i,":",end=" ")
+        a=int(input())
+        s+=a
+    av=s/n
+    print("Average Value: ",av)
+else:
+    print("Error message")
+"""
+#task3:
+"""
+s=0
+n=0
+while True:
+    print("Enter the grade('end' to quit): ",end=" ")
+    a=input()
+    if a=="end":
+        av=s/n
+        break
+    else:
+        if a=="A+" or a=="A":
+            s+=4
+        elif a=="A-":
+            s+=3.7
+        elif a=="B+":
+            s+=3.3
+        elif a=="B":
+            s+=3
+        elif a=="B-":
+            s+=2.7
+        elif a=="C+":
+            s+=2.3
+        elif a=="C":
+            s+=2
+        elif a=="C-":
+            s+=1.7
+        elif a=="D+":
+            s+=1.3
+        elif a=="D":
+            s+=1
+        else:
+            s+=0
+        n+=1
+if n>0:
+    print("A grade point avreage: ",av)
+else:
+    print("No grades entered")
+"""
+#task4
+"""
+s=0
+n=0
+while True:
+    if n!=0:
+        print("Enter the age of guest ('blank' to quit): ",end=" ")
+    else:
+        print("Enter the age of guest ('end' to quit): ",end=" ")
+    a=input()
+    if a=="end":
+        print("The total for that group is $",s)
+        break
+    else:
+        if a<="2":
+            s+=0
+        elif a<="12" and a>="3":
+            s+=14
+        elif a>="65":
+            s+=18
+        else:
+            s+=23        
+    n+=1
+"""
+#task5
+"""
+p=0
+d=0
+n=0
+print("Enter the x part of the coordinate: ",end=" ")
+x=int(input())
+print("Enter the y part of the coordinate: ",end=" ")
+y=int(input())
+x2=x
+y2=y
+while True:
+    print("Enter the x part of the coordinate ('end' to quit): ",end=" ")
+    x1=input()
+    if x1=="end":
+        d=((x-x2)**2+(y-y2)**2)**0.5
+        p+=d
+        break
+    print("Enter the y part of the coordinate: ",end=" ")
+    y1=int(input())
+    d=((x2-int(x1))**2+(y2-y1)**2)**0.5
+    p+=d
+    x2=int(x1)
+    y2=y1
+print("The perimeter of that polygon is ",round(p,2))
+"""   
+
+#lab4
+#task1
+"""
+i=5
+while i<=10:
+    if i==7 or i==9:
+        i+=1
+        continue
+    print(i,end=" ")
+    i+=1
+"""
+#task2
+"""
+s=0
+while True:
+    x=int(input("Enter number: "))
+    if x==0:
+        print(s)
+        break
+    else:
+        s+=x
+"""
+#task3
+"""
+s=0
+n=0
+while True:
+    x=int(input("Enter number: "))
+    if x==-1:
+        print(s/n)
+        break
+    else:
+        s+=x
+        n+=1
+"""
+#task4
+"""
+s=0
+n=int(input("Natural eded daxil edin: "))
+while n!=0:
+    s+=n%10
+    n//=10
+print("Reqemlerin cemi",s,".")
+"""
+#task5
+"""
+n=int(input("Enter number: "))
+copy=n
+r=0
+while n!=0:
+    r*=10
+    r+=n%10
+    n//=10
+if copy==r:
+    print("yes")
+else:
+    print("no")
+"""
+#task6
+"""
+n=int(input("Natural ededi daxil edin: "))
+while n!=0:
+    r1=n%10
+    r2=n//10%10
+    if r1==r2:
+        print("He.")
+        break
+    n//=10
+else:
+    print("Yox")
+"""
+#task7
+"""
+i=100
+while i<=999:
+    a=i%10
+    b=i//10%10
+    c=i//100
+    if a**3+b**3+c**3==i:
+        print(i)
+    i+=1
+"""
+#task8
+"""
+n=int(input("Enter number: "))
+i=2
+while n!=0:
+    while n%i==0:
+        print(i)
+        n//=i
+    else:
+        i+=1
+"""
+#task9
+"""
+n=int(input("Enter binary number: "))
+s=0
+i=0
+while n!=0:
+    s+=2**i*(n%10)
+    i+=1
+    n//=10
+print(s)
+"""
+#task10
+"""
+n=int(input("Enter number: "))
+r=0
+p=1
+while n!=0:
+    rem=n%2
+    r+=rem*p
+    p*=10
+    n=n//2
+print(r)
+"""
+#task11
+"""
+a=1
+b=1
+c=a+b
+print(a)
+print(b)
+while c<=50:
+    print(c)
+    a=b
+    b=c
+    c=a+b
+"""
+#task12
+#a
+"""
+N=int(input("Enter number: "))
+s=0
+n=0
+while n<=N:
+    s+=n/((1+n**3)**0.5)
+    n+=1
+print(s)
+"""
+#b
+"""
+N=int(input("Enter number: "))
+s=0
+i=1
+while i<=N:
+    s+=i**i/i
+    i+=1
+print(s)
+"""
+#c
+"""
+N=int(input("Enter number: "))
+s=0
+i=1
+while i<=N:
+    s+=(1.1**i+i**2)/(5*i)
+    i+=1
+print(s)
+"""
+#task13
+"""
+n=int(input("2 reqemli eded daxil edin: "))
+secim=int(input("Bir secim daxil edin: "))
+s=0
+h=1
+while n!=0:
+    s+=n%10
+    h*=n%10
+    n//=10
+if secim==1:
+    print(s)
+elif secim==2:
+    print(h)
+else:
+    pass
+"""
+#task14
+"""
+n=int(input("N-i daxil edin: "))
+i=1
+while i<=n:
+    copy=i
+    r=0
+    while copy!=0:
+        r+=1
+        copy//=10
+    if i==(i**2)%(10**r):
+        print(i,"*",i,"=",i**2)
+    i+=1
+"""
+#task15
+"""
+n=int(input("N-i daxil edin: "))
+i=1
+while i<=n:
+    copy=i
+    lamp=1
+    while copy!=0:
+        if copy%10==0:
+            lamp=0
+        elif copy%(copy%10)!=0:
+            lamp=0
+        copy//=10
+    if lamp==1:
+        print(i,end=" ")
+    i+=1
+"""
+
