@@ -1,0 +1,245 @@
+#task1
+"""
+def check(n):
+    if s%2==0:
+        return "cut"
+    return "tek"
+s=0
+while True:
+    num=int(input("Eded daxil edin: "))
+    if num!=-1:
+        s+=num
+    else:
+        check(s)
+        break1
+"""
+#task2
+"""
+def check(a,b):
+    if b!=0 and (a/b)%2==0:
+        return True
+    return False
+
+a=int(input("a ededi daxil edin: "))
+b=int(input("b ededi daxil edin: "))
+print(check(a,b))
+"""
+#task3
+"""
+def check(n,k):
+    if k**k==n:
+        return True
+    return False
+
+n=int(input("n ededi daxil edin: "))
+k=int(input("k ededi daxil edin: "))
+print(check(n,k))
+"""
+#task4
+"""
+def check(p):
+    n=1
+    while n<=p:
+        if p==n*(n+1):
+            return "pronic"
+        else:
+            n+=1
+    else:
+        return "heteromecic"
+    
+p=int(input("p ededi daxil edin: "))
+print(check(p))
+"""
+#task5
+"""
+def say(num):
+    n=0
+    if num==0:
+        n=1
+    else:
+        num=abs(num)
+        while num!=0:
+            n+=1
+            num//=10
+    return n
+
+num=int(input("ededi daxil edin: "))
+print(say(num))
+"""
+#task6
+"""
+def say(num):
+    n=0
+    while num!=0:
+        n+=1
+        num//=10
+    return n
+
+def check(n):
+    i=say(n)
+    cem=0
+    copy=n
+    while n!=0:
+        cem+=(n%10)**i
+        i-=1
+        n//=10
+    if cem==copy:
+        return "yes"
+    return "no"
+
+n=int(input("enter N: "))
+print(check(n))
+"""
+#task7
+"""
+def check(n):
+    if (2**n+1)%(2*n+1)==0:
+        return "Curzon"
+    return "non-Curzon"
+
+n=int(input("enter N: "))
+print(check(n))
+"""
+#task8
+"""
+def check(n):
+    f=1
+    i=1
+    while f%n!=0:
+        i+=1
+        f*=i
+    return i
+
+n=int(input("enter N: "))
+print(check(n)+"!")
+"""
+#task9
+"""
+def cem(n):
+    s=0
+    while n!=0:
+        s+=n%10
+        n//=10
+    return s
+
+def sade(n):
+    if n<=1:
+        return False
+    for i in range(2,n//2+1):
+        if n%i==0:
+            return False
+    return True
+
+n=int(input("enter N: "))
+if sade(int(n/cem(n))):
+    print("Moron")
+else:
+    print("non-Moron")
+"""
+#task10
+"""
+def check(n):
+    r=n%10
+    while n>9:
+        n//=10
+    s=n
+    if (r+s)**0.5>3:
+        return True
+    return False
+
+n=int(input("enter N: "))
+print(check(n))
+"""
+#task11
+"""
+def check(a,b):
+    for i in range(2,a+1):
+        if b%i==0:
+            return False
+    return True
+
+a,b=map(int,input("Iki natural eded daxil edin:").split(" "))
+if check(a,b):
+    print(a,"ve",b,"qarsiliqli sade ededlerdir.")
+else:
+    print(a,"ve",b,"qarsiliqli sade ededler deyil.")
+"""
+#task12
+"""
+def check(n):
+    while n!=0:
+        if not sade(n):
+            return False
+        else:
+            n//=10
+    return True
+
+def sade(n):
+    if n==1:
+        return False
+    for i in range(2,n//2+1):
+        if n%i==0:
+            return False
+    return True
+
+n=int(input("Natural eded daxil edin: "))
+if check(n):
+    print(n,"ededi hiper-sadedir.")
+else:
+     print(n,"ededi hiper-sade deyil.")
+"""
+#task13
+"""
+def ebob(a,b):
+    while b!=0:
+        a,b=b,a%b
+    return a
+a,b=map(int,input("Iki natural eded daxil edin:").split(" "))
+ebob=ebob(a,b)
+ekob=int((a*b)/ebob)
+print("EBOB(",a,",",b,")=",ebob)
+print("EKOB(",a,",",b,")=",ekob)
+"""
+#task14
+"""
+def check(a,b,c):
+    if a<=b and b<=c:
+        return a,b,c
+    elif a<=c and c<=b:
+        return a,c,b
+    elif b<=a and a<=c:
+        return b,a,c
+    elif b<=c and c<=a:
+        return b,c,a
+    elif c<=a and a<=b:
+        return c,a,b
+    elif c<=b and b<=a:
+        return c,b,a
+a,b,c=map(int,input("Uc natural eded daxil edin:").split(" "))
+print(check(a,b,c))
+"""
+#task15
+"""
+def ebob(a,b):
+    while b!=0:
+        a,b=b,a%b
+    return a
+
+a,b=map(int,input("Kesrin suret ve mexrecini daxil edin:").split(" "))
+ebob=ebob(a,b)
+a=a//ebob
+b=b//ebob
+print("Sadelesdirmeden sonra: ",a,"/",b)
+"""
+#task16
+"""
+def cevir(num):
+    r=0
+    while num!=0:
+        r*=10
+        r=r+num%10
+        num//=10
+    return r
+n=int(input("Natural eded daxil edin: "))
+print(cevir(n))
+"""
