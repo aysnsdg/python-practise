@@ -1,0 +1,120 @@
+#lab6
+#task1
+"""
+b=input("Enter symbol: ")
+a="Menim adim Aysundur."
+lamp=0
+for i in a:
+    if i==b:
+       lamp=1
+if lamp==1:
+     print("Yes")
+else:
+     print("No")
+"""
+#task2
+"""
+text=input("enter text: ")
+new=""
+for i in text:
+    if i=="a":
+        new+="b"
+    elif i=="b":
+        new+="a"
+    elif i=="A":
+        new+="B"
+    elif i=="B":
+        new+="A"
+    else:
+        new+=i
+print(new)
+"""
+#task3
+"""
+def length(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+text=input("enter text: ")
+text=" "+text
+new=""
+word=0
+for i in range(length(text)-1):
+    if text[i]==" " and text[i+1]!=" ":
+        word+=1
+print(word)
+"""
+#task4
+"""
+def length(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+text=input("enter text: ")+" "
+word=""
+l=[]
+m=0
+for i in range(length(text)-1):
+   if text[i]!=" ":
+       word+=text[i]
+   if text[i+1]==" ":
+      l+=[word]
+      word=""
+for i in l:
+    if length(i)>m:
+        m=length(i)
+        soz=i
+print(i," ,uzunlugu",m)     
+"""
+#task5
+"""
+def length(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def myfind(a):
+    for i in range(length(a)):
+        if a[i]==" ":
+            return i
+    
+text=input("soyad, ad ve ata adinizi daxil edin: ")
+soyad=text[:myfind(text)]
+ad=text[myfind(text)+1]
+text=text[myfind(text)+1:]
+ata=text[myfind(text)+1]
+print(ad,".",ata,".",soyad)
+"""
+#task6
+"""
+def myfind(a):
+    for i in range(length(a)):
+        if a[i]=="/":
+            return i
+
+def length(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+text=input("faylin unvanini daxil edin: ")
+word=""
+for i in text:
+    if i!="/":
+        word+=i
+    else:
+        print(word)
+        word=""
+print(word)
+"""
+#task7
+text=input("setri daxil edin: ")
+a=input("neyi evezleyirik: ")
+b=input("ne ile evezleyirik: ")
+new=""
