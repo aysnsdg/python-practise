@@ -251,9 +251,3 @@ for i in text:
 new+=word[0]+word[2:]
 print(new)
 """
-
-#task7
-text=input("setri daxil edin: ")
-a=input("neyi evezleyirik: ")
-b=input("ne ile evezleyirik: ")
-new=""
