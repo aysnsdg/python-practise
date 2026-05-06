@@ -114,6 +114,145 @@ for i in text:
 print(word)
 """
 #task7
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def myfind(text,a):
+    n=mylen(text)
+    m=mylen(a)
+    for i in range(n-m+1):
+        if text[i:i+m]==a:
+            return i
+    return -1
+
+def myreplace(text,a,b):
+    new=""
+    while True:
+        c=myfind(text,a)
+        if c!=-1:
+            new+=text[:c]+b
+            text=text[c+mylen(a):]
+        else:
+            new+=text
+            return new
+            
+text=input("setri daxil edin: ")
+a=input("neyi evezleyirik: ")
+b=input("ne ile evezleyirik: ")
+print(myreplace(text,a,b))
+"""
+#task8
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def myfind(text,a):
+    count=0
+    n=mylen(text)
+    m=mylen(a)
+    for i in range(n-m+1):
+        if text[i:i+m]==a:
+            count+=1
+    return count
+
+text=input("input: ")
+a=input("axtarilan soz: ")
+print(a," simvollarinin sayi: ",myfind(text,a))
+"""
+#task9
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def myfind(text,a):
+    n=mylen(text)
+    m=mylen(a)
+    for i in range(n-m+1):
+        if text[i:i+m]==a:
+            return i
+    return -1
+
+def myreplace(text,a,b):
+    new=""
+    while True:
+        c=myfind(text,a)
+        if c!=-1:
+            new+=text[:c]+b
+            text=text[c+mylen(a):]
+        else:
+            new+=text
+            return new
+
+text=input("input: ")
+a=input("word to change: ")
+b=input("what to change: ")
+print(myreplace(text,a,b))
+"""
+#task10
+"""
+def mylower(a):
+    n=""
+    for i in a:
+        if i>="A" and i<="Z":
+            n+=chr(ord(i)+32)
+        else:
+            n+=i
+    return n
+               
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def myfind(text,a):
+    n=mylen(text)
+    m=mylen(a)
+    for i in range(n-m+1):
+        if mylower(text[i:i+m])==a:
+            return i
+    return -1
+
+def myreplace(text,a):
+    count=0
+    while True:
+        c=myfind(text,a)
+        if c!=-1:
+            count+=1
+            text=text[c+mylen(a):]
+        else:
+            return count
+
+text=input("input: ")
+a=input("word to change: ")
+print(myreplace(text,a))
+"""
+#task11
+"""
+text=input("input: ")
+new=""
+word=""
+for i in text:
+    if i!=" ":
+        word+=i
+    else:
+        new+=word[0]+word[2:]+" "
+        word=""
+new+=word[0]+word[2:]
+print(new)
+"""
+
+#task7
 text=input("setri daxil edin: ")
 a=input("neyi evezleyirik: ")
 b=input("ne ile evezleyirik: ")
