@@ -251,3 +251,169 @@ for i in text:
 new+=word[0]+word[2:]
 print(new)
 """
+#task12
+"""
+text=input("setir: ")
+sait="AOUE"
+samit="bcmf"
+reqem="3579"
+durgu="!?,;"
+r=""
+for i in text:
+    if i in sait or i in samit or i in reqem or i in durgu:
+        if i not in r:
+            r+=i
+for i in r:
+    print(i,end=" ")
+print("simvollari var")
+"""
+#task13
+"""
+def mylist(a):
+    r=""
+    l=[]
+    for i in a:
+        if i!="+":
+            r+=i
+        else:
+            l+=[r]
+            r=""
+    l+=[r]
+    return l
+
+def cem(l):
+    s=0
+    for i in l:
+        s+=int(i)
+    return s
+
+text=input("ifadeni daxil edin: ")
+l=mylist(text)
+a=cem(l)
+print("cavab: ",a)
+"""
+#task14
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def cal(text):
+    r=""
+    l=[]
+    k=[]
+    for i in text:
+        if i!="+" and i!="-":
+            r+=i
+        else:
+            l+=[r]
+            r=""
+    l+=[r]
+
+    for i in text:
+        if i=="+" or i=="-":
+            k+=[i]
+    
+    s=int(l[0])
+    for i in range(mylen(k)):
+            if k[i]=="+":
+                s+=int(l[i+1])
+            else:
+                s-=int(l[i+1])
+    return s
+
+text=input("ifadeni daxil edin: ")
+s=cal(text)
+print("cavab: ",s)
+"""
+#task15
+"""
+text=input("setri daxil edin: ")
+word=""
+for i in text:
+    if i!=" ":
+        word+=i
+    else:
+        print(word)
+        break
+"""
+#task16
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+ad=input("faylin adini daxil edin: ")
+yeni=input("faylin yeni genislemesini daxil edin: ")
+x=""
+l=[]
+k=0
+for i in ad:
+    if i!=".":
+        x+=i
+    else:
+        l+=[x]
+        x=""
+        k=1
+l+=[x]
+if k==0:
+    print(ad+"."+yeni)
+else:
+    for i in range(mylen(l)-1):
+        print(l[i],end=".")
+    print(yeni)
+"""
+#task17
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+ad=input("adi daxil edin: ")
+s="/\|?*:><'"
+f=0
+for i in ad:
+    if i in s and mylen(ad)<=10:
+        f=1
+if f==1:
+    print("ERROR")
+else:
+    print("dogrudur")
+"""
+#task18
+"""
+def reqem(ad):
+    for i in ad:
+        if i>="0" and i<="9":
+            return True
+    return False
+
+def isare(ad):
+    s=".-~_=:"
+    for i in ad:
+        if i in s:
+            return True
+    return False
+
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+ad=input("adi daxil edin: ")
+if mylen(ad)<5 and mylen>15:
+    print("5<=Simvol sayı<=15 olmalıdır!")
+elif not reqem(ad):
+    print("Yanlış! Ən az 1 rəqəm olmalıdır!")
+elif not isare(ad):
+    print("Yanlış! Ən az 1 xususi simvol olmalıdır!")
+else:
+    print("Düzgün qovluq adı!")
+"""
