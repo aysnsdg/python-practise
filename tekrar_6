@@ -462,3 +462,171 @@ s=cal(text)
 print("cavab: ",s)
 ISLEMIRR!!!!
 """
+#hw5
+#task1
+"""
+def mylist(a):
+    word=""
+    l=[]
+    for i in a:
+        if i!=" ":
+            word+=i
+        else:
+            l+=[word]
+            word=""
+    if word!="":
+        l+=[word]
+    return l
+
+text=input("Enter a sentence: ")
+l=mylist(text)
+print("The modified string is: ",end=" ")
+for i in l:
+    if i!="":
+        print(i,end=" ")
+"""
+#task2
+"""
+def check(a):
+    say1=0
+    for i in a:
+        if i=="1":
+            say1+=1
+    if say1%2==0:
+        return 0
+    return 1
+
+def mylen(a):
+    n=0
+    for i in a:
+        if i=="0" or i=="1":
+            n+=1
+    return n
+
+while True:
+    bit=input("Enter 8 bits:  ")
+    if bit!="end":
+        if mylen(bit)!=8:
+            print("That was not 8 bits ... Try again")
+        elif check(bit)==1:
+            print("The parity bit should be 1")
+        else:
+            print("The parity bit should be 0")
+    else:
+        break
+"""
+#task3
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def samit(a,sait):
+    r=""
+    for i in range(mylen(a)):
+        if a[i] in sait:
+            return a[i:]+r+"ay"
+        else:
+            r+=a[i]
+
+sait="euioa"
+text=input("Enter a line of text: ")
+if text[0] in sait:
+    print("The translated text: ",text+"way")
+else:
+    print("The translated text: ",samit(text,sait))
+"""
+#task4
+"""
+floor=int(input("Floors (must be at least 2): "))
+width=int(input("Width (excluding walls, must be a non-zero even integer): "))
+top=input("Roof type ('flat' or 'pointy'): ")
+if top=="flat":
+    dam=" "+width*"_"
+    print(dam)
+elif top=="pointy":
+    for i in range(width//2):
+        print(" "*(width//2-i)+"/"+" "*i*2+"\\")
+for i in range(floor-1):
+    print("|"+" "*width+"|")
+if width%2==1:
+    r=width//2
+    k="|"+(r-1)*" "+"||"+r*" "+"|"
+else:
+    r=width//2
+    k="|"+(r-1)*" "+"||"+(r-1)*" "+"|"
+t=(width+2)*"="
+print(k)
+print(t)
+"""
+#task5
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def qonsu_reqem(t):
+    rqms="0123456789"
+    for i in range(1,mylen(t)-1):
+        if t[i-1] in rqms and t[i] in rqms and t[i+1] in rqms:
+            if t[i-1]==t[i] and t[i]==t[i+1]:
+                return True
+    return False
+
+def herf(a):
+    for i in a:
+        if (i>="A" and i<="Z") or (i>="a" and i<="z"):
+            return True
+    return False
+
+def yanasiherf(t):
+    for i in range(1,mylen(t)-1):
+        if herf(t[i-1]) and herf(t[i]) and herf(t[i+1]):
+            return True
+    return False
+
+def reqem(a):
+    for i in a:
+        if i>="0" and i<="9":
+            return True
+    return False
+
+def bosluq(a):
+    for i in a:
+        if i==" ":
+            return True
+    return False
+
+def basr(a):
+    rqms="0123456789"
+    if a[0] in rqms:
+        return True
+    return False
+
+name=input("Enter a username: ")
+lamp=0
+if not herf(name):
+    print("Wrong! There should be at least one letter!")
+    lamp=1
+if not reqem(name):
+    print("Wrong! There should be at least one digit!")
+    lamp=1
+if qonsu_reqem(name):
+    print("Wrong! There cannot be 3 the same sequential digits!")
+    lamp=1
+if yanasiherf(name):
+    print("Wrong! There cannot be 3 sequential letters!")
+    lamp=1
+if bosluq(name):
+    print("Wrong! There cannot be an empty space!")
+    lamp=1
+if basr(name):
+    print("Wrong! The username cannot start with digit!")
+    lamp=1
+if lamp==0:
+    print("Correct username!")
+"""
