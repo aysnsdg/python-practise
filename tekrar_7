@@ -387,3 +387,153 @@ for i in a:
 print("Max2 = ",max2)
 print("Min2 = ",min2)
 """
+#task24
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+from random import *
+a=[randint(1,9)for x in range(5)]
+max1=a[0]
+max2=a[0]
+i1=0
+i2=0
+for i in range(mylen(a)):
+    if a[i]>max1:
+        max2=max1
+        max1=a[i]
+        i2=i1
+        i1=i
+    elif a[i]>max2 and max1!=max2:
+        max2=a[i]
+        i2=i
+print("A= ",a)
+print("Maksimal element: A[",i1,"]= ",max1)
+print("Ikinci maksimum: A[",i2,"]= ",max2)
+"""
+#task25
+"""
+n=int(input("Enter the number of items in massiv: "))
+a=[]
+for i in range(n):
+    x=int(input("Enter a number: "))
+    a+=[x]
+count=0
+m=a[0]
+for i in a:
+    if i>m:
+        m=i
+for i in a:
+    if i==m:
+        count+=1
+print("A= ",a)
+print("Maksimal qiymet ",m)
+print("Elementlerin sayi ",count)
+"""
+#task26
+"""
+from random import *
+n=int(input("Massivin elemetlerinin sayini daxil edin (CUT OLMALIDIR):"))
+a=[randint(1,50) for i in range(n)]
+k=n//2
+b=a[:k]
+b=b[::-1]
+c=a[k:]
+c=c[::-1]
+d=[]
+for i in b:
+    d+=[i]
+for i in c:
+    d+=[i]
+print("Massiv: E")
+print(a)
+print("Half-Inverted")
+print(d)
+"""
+#task27
+"""
+import random
+article_list = ["the", "a", "one", "some", "any"] 
+noun_list = ["boy", "girl", "dog", "town" , "car"] 
+verb_list = ["drove", "jumped", "ran", "walked" , "skipped"]  
+preposition_list = ["to", "from", "over", "under" , "on"]
+for i in range(5):
+    print(random.choice(article_list)+" "+random.choice(noun_list)+" "+random.choice(verb_list)+" "+random.choice(preposition_list)+" "+random.choice(article_list)+" "+random.choice(noun_list)+".")
+"""
+#task28
+"""
+def say(x,a):
+    c=0
+    for i in a:
+        if i==x:
+            c+=1
+    return c
+
+def check(x):
+    b=[]
+    for a in x:
+        if 91<=a<=100:
+            b+=["A"]
+        elif 81<=a<91:
+            b+=["B"]
+        elif 71<=a<81:
+            b+=["C"]
+        elif 61<=a<71:
+            b+=["D"]
+        else:
+            b+=["E"]
+    return b
+
+a=[]
+print("0-100 arasinda qiymetlerinizi daxil edin: ")
+f=int(input("fizika imtahanin qiymeti:"))
+r=int(input("riyaziyyat imtahanin qiymeti:"))
+k=int(input("kimya imtahanin qiymeti:"))
+i=int(input("ingilis dili imtahanin qiymeti:"))
+d=int(input("ana dili imtahanin qiymeti:"))
+a+=[f]
+a+=[r]
+a+=[k]
+a+=[i]
+a+=[d]
+print("cavablariniz: ",a)
+b=check(a)
+print(say("A",b)," eded A,")
+print(say("B",b)," eded B,")
+print(say("C",b)," eded C,")
+print(say("D",b)," eded D, ve")
+print(say("E",b)," eded kesriniz var")
+"""
+#task29
+"""
+def say(a):
+    s=0
+    for i in a:
+        if i=="he":
+            s+=1
+    if 4<=s<=5:
+        return "elaci"
+    elif s==3:
+        return "yaxshi"
+    elif s==2:
+        return "kafi"
+    return "pis"
+
+a=[]
+print("fizika imtahanini kecdiniz mi? he/yox")
+a+=[input()]
+print("riyaziyyat imtahanini kecdiniz mi? he/yox")
+a+=[input()]
+print("kimya imtahanini kecdiniz mi? he/yox")
+a+=[input()]
+print("ingilis dili imtahanini kecdiniz mi? he/yox")
+a+=[input()]
+print("ana dili imtahanini kecdiniz mi? he/yox")
+a+=[input()]
+print("cavablariniz: ",a)
+print("Sizin tedris veziyyetiniz beledir:")
+print(say(a))
+"""
