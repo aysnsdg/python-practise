@@ -1,0 +1,463 @@
+#task1
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+from random import *
+x=int(input("Ne axtaririq: "))
+a=[randint(0,5) for x in range(5)]
+lamp=0
+print("A = ",a)
+for i in range(mylen(a)):
+    if a[i]==x:
+        print("A=[",i,"]= ",a[i])
+        lamp=1
+if lamp==0:
+    print("Tapilmadi")
+"""
+#task2
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+    
+def cem(a):
+    s=0
+    while a!=0:
+        s+=a%10
+        a//=10
+    return s
+
+def selection(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if cem(a[min_i])>cem(a[j]):
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    if mylen(a)<=1:
+        return a
+    x=a[mylen(a)//2]
+    b1=[b for b in a if cem(b)>cem(x)]
+    bx=[b for b in a if cem(b)==cem(x)]
+    b2=[b for b in a if cem(b)<cem(x)]
+    
+    return quick(b1)+bx+quick(b2)
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if cem(a[j+1])>cem(a[j]):
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+from random import *
+A=[randint(10,50) for x in range(10)]
+c=selection(A)[::-1]
+print("A = ",A)
+print("Sorted A = ",quick(A))
+print("Sorted A = ",bubble(A))
+print("Sorted A = ",c)
+"""
+#task3
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n):
+        for j in range(n-1-i):
+            if a[j+1]<a[j]:
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+print("5 setri daxil edin: ")
+a=[]
+i=1
+while i<=5:
+    print(i,".",end=" ")
+    x=input()
+    a+=[x]
+    i+=1
+print("A =  ",a)
+print("Sorted A = ",bubble(a))
+"""
+#task3
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def selection(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if a[min_i]>a[j]:
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if b<x]
+    bx=[b for b in a if b==x]
+    b2=[b for b in a if b>x]
+    return quick(b1)+bx+quick(b2)
+    
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if a[j]>a[j+1]:
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+print("5 setri daxil edin: ")
+a=[]
+i=1
+while i<=5:
+    print(i,".",end=" ")
+    x=input()
+    a+=[x]
+    i+=1
+print("A =  ",a)
+print("Sorted A = ", bubble(a))
+print("Sorted A = ", quick(a))
+print("Sorted A = ", selection(a))
+"""
+#task4
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if a[j][4]>a[j+1][4]:
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+def selection(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if a[min_i][4]>a[j][4]:
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    
+    x=a[n//2]
+    b1=[b for b in a if b[4]<x[4]]
+    bx=[b for b in a if b[4]==x[4]]
+    b2=[b for b in a if b[4]>x[4]]
+    
+    return quick(b1)+bx+quick(b2)
+
+l=[]
+print("Ad, ata adi ve soyadinizi daxil edin: ")
+while True:
+    a=input()
+    if a==" ":
+        break
+    else:
+        l+=[a]
+
+print("A = ",l)
+print("Sorted A = ",bubble(l))
+print("Sorted A = ",selection(l))
+print("Sorted A = ",quick(l))
+"""
+#task5
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if a[j]>a[j+1]:
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+def selection(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if a[min_i]>a[j]:
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if b>x]
+    bx=[b for b in a if b==x]
+    b2=[b for b in a if b<x]
+
+    return quick(b1)+bx+quick(b2)
+
+from random import *
+a=[randint(-100,100) for x in range(10)]
+b=quick(a)[::-1]
+print("A = ",a)
+print("Sorted A = ",b)
+"""
+#task6
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if a[j]>a[j+1]:
+                a[j+1],a[j]=a[j],a[j+1]
+    return a
+
+from random import *
+a=[randint(-100,100) for x in range(6)]
+l=[]
+k=[]
+for i in a:
+    if i>0:
+        l+=[i]
+    else:
+        k+=[i]
+say=mylen(l)
+l=bubble(l)[::-1]
+k=bubble(k)
+print("Massiv: ",*a)
+print("Netice: ",*l,end=" ")
+print(*k)
+print("Musbet ededlerin say: ",say)
+"""
+#task7
+#task8
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def quick_sort(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if b<x]
+    bx=[b for b in a if b==x]
+    b2=[b for b in a if b>x]
+    return quick_sort(b1)+bx+quick_sort(b2)
+
+def binary_search(a,x):
+    left=0
+    right=n
+    count=0
+    while left<right-1:
+        count+=1
+        middle=(left+right)//2
+        if x<a[middle]:
+            right=middle
+        else:
+            left=middle
+    if a[left]==x:
+        return count
+    return None
+
+from random import *
+n=int(input("massivdeki ededlerin sayin daxil edin: "))
+a=[randint(1,9) for x in range(n)]
+print("Massiv: ",*a)
+a=quick_sort(a)
+print("Cesidlemeden sonra: ",*a)
+x=int(input("X ededi daxil edin :"))
+if binary_search(a,x)!=None:
+    print(x," ededi tapildu.")
+    print("Muqayiselerin sayi: ",binary_search(a,x))
+else:
+    print("Tapilmadi")
+"""
+#task9
+#task10
+#task11
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def teklist(a):
+    l=[]
+    for i in a:
+        n=0
+        while i!=0:
+            r=i%10
+            if r%2!=0:
+                n+=1
+            i//=10
+        l+=[n]
+    return l
+
+def cutlist(a):
+    l=[]
+    for i in a:
+        n=0
+        while i!=0:
+            r=i%10
+            if r%2==0:
+                n+=1
+            i//=10
+        l+=[n]
+    return l
+
+def check_tek(a):
+    n=0
+    while a!=0:
+        if a%10%2!=0:
+            n+=1
+        a//=10
+    return n
+
+def check_cut(a):
+    n=0
+    while a!=0:
+        if a%10%2==0:
+            n+=1
+        a//=10
+    return n
+
+
+def quick_tek(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if check_tek(b)<check_tek(x)]
+    bx=[b for b in a if check_tek(b)==check_tek(x)]
+    b2=[b for b in a if check_tek(b)>check_tek(x)]
+    return quick_tek(b1)+bx+quick_tek(b2)
+
+def quick_cut(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if check_cut(b)>check_cut(x)]
+    bx=[b for b in a if check_cut(b)==check_cut(x)]
+    b2=[b for b in a if check_cut(b)<check_cut(x)]
+    return quick_cut(b1)+bx+quick_cut(b2)
+
+from random import *
+n=int(input("massivdeki ededlerin sayin daxil edin: "))
+a=[randint(100,999)for i in range(n)]
+ilk=a[:n//2]
+son=a[n//2:]
+b=quick_tek(a[:n//2])+quick_cut(a[n//2:])
+print("Massiv: ",*a)
+print("Ilk yarisi: ",*ilk)
+print("Son yarisi: ",*son)
+print("Tek reqemlilerin sayi ilk yarsi: ",*teklist(ilk))
+print("Cut reqemlilerin sayi ilk yarsi: ",*cutlist(son))
+print("Cesidlemeden sonra: ",*b)
+"""
+#task12
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def say(a):
+    n=0
+    while a!=0:
+        if (a%10)!=0:
+            n+=1
+        a//=10
+    return n
+
+def cem(a):
+    s=0
+    while a!=0:
+        s+=a%10
+        a//=10
+    return s
+
+def selection1(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if say(a[min_i])>say(a[j]):
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def selection2(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if cem(a[min_i])<cem(a[j]):
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+from random import *
+N=int(input("N daxil edin: "))
+a=[randint(1,10000) for i in range(N)]
+ilk=selection1(a[:N//2])
+son=selection2(a[N//2:])
+print("mylist=",a)
+print("mylist=",ilk+son)
+"""
