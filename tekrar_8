@@ -325,7 +325,143 @@ else:
     print("Tapilmadi")
 """
 #task9
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a,n):
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if a[j+1]<a[j]:
+                a[j+1],a[j]=a[j],a[j+1]
+    return a
+
+def selection(a,n):
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if a[min_i]>a[j]:
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if b<x]
+    bx=[b for b in a if b==x]
+    b2=[b for b in a if b>x]
+    return quick(b1)+bx+quick(b2)
+
+def binary_search(a,x):
+    left=0
+    right=n
+    while left<right-1:
+        middle=(left+right)//2
+        if x<a[middle]:
+            right=middle
+        else:
+            left=middle
+    if a[left]==x:
+        return True
+    return False
+
+def say(a,x):
+    n=0
+    for i in a:
+        if i==x:
+            n+=1
+    return n
+
+from random import *
+n=int(input("Massivdeki ededlerin sayinin daxil edin: "))
+a=[randint(1,9)for u in range(n)]
+print("Massiv: ",*a)
+a=selection(a,n)
+print("cesidlemeden sonra: ",*a)
+x=int(input("X ededi daxil edin: "))
+if binary_search(a,x):
+    print(x," ededi ",say(a,x)," defe tapildi. ")
+else:
+    print(x," ededi tapilmadi. ")
+"""
 #task10
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a,n):
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if a[j+1]<a[j]:
+                a[j+1],a[j]=a[j],a[j+1]
+    return a
+
+def selection(a,n):
+    for i in range(n-1):
+        min_i=i
+        for j in range(i+1,n):
+            if a[min_i]>a[j]:
+                min_i=j
+        if min_i!=i:
+            a[min_i],a[i]=a[i],a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if b<x]
+    bx=[b for b in a if b==x]
+    b2=[b for b in a if b>x]
+
+    return quick(b1)+bx+quick(b2)
+
+def binary_search(a,x):
+    left=0
+    right=n
+    while left<right-1:
+        middle=(left+right)//2
+        if x<a[middle]:
+            right=middle
+        else:
+            left=middle
+    if a[left]==x:
+        return True
+    return False
+
+def yaxin(b,x,n):
+    yaxin=b[0]
+    for i in b:
+        if abs(i-x)<abs(yaxin-x):
+            yaxin=i
+    return yaxin
+                
+from random import *
+n=int(input("Massivdeki ededlerin sayin daxil edin: "))
+a=[randint(1,9)for i in range(n)]
+print("Massiv: ",*a)
+a=bubble(a,n)
+print("Cesidlemeden sonra: ",*a)
+x=int(input("X ededi daxil edin: "))
+a+=[x]
+b=bubble(a,n) #eded tapilmadigi halda bu listen istifade edib ozune yaxin olani tapacam
+#ededi elave edirem sonra qonsularina baxcam aralarindaiki ferq en az olani goturecem
+if binary_search(a,x):
+    print(x," ededi tapildi.")
+else:
+    print(x,"ededi tapilmadi. en yaxin eded:",yaxin(b,n,x))
+"""   
 #task11
 """
 def mylen(a):
