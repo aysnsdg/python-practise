@@ -578,7 +578,329 @@ for i in range(n):
         print("{:2d}".format(ls[i][j]), end=" ")
     print()
 """
+#task4_f
+"""
+def print_matrix(a):
+    for row in a:
+        for x in row:
+            print(f"{x:4}", end = "")
+        print()
+        
+from random import *
+n = int(input("Enter N :"))
+a = [[randint(10,99)for j in range(n)]for i in range(n)]
+b = [[0 for i in range(n)]for j in range(n)]
+print("Martix before :")
+print()
+print_matrix(a)
+print()
 
+for j in range(n):
+    for i in range(n):
+        b[j][n-i-1] = a[i][j]
+print("Martix after :")
+print()
+print_matrix(b)
+"""
+#task5
+#naytzo
+"""
+def print_matrix(a):
+    for row in a:
+        for x in row:
+            print(f"{x:4}", end = "")
+        print()
+
+from random import *
+n=int(input("Enter N: "))
+a = [[randint(10,20) for j in range(n)] for i in range(n)]
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if i == j or j == 0 or j == n-1:
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if i == 0 or i == n//2 or j == 0 or j == n-1:
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if (j == n//2 and i>=n//2) or (i == j and i<=n//2) or ( i+j == n-1 and i<=n//2):
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if i == 0 or j == n//2:
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if i == 0 or i == n-1 or i+j == n-1:
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+
+for i in range(n):
+    for j in range(n):
+        if i == n-1 or i == 0 or j == n-1 or j == 0:
+            a[i][j] = "+"
+        else:
+            a[i][j] = str(a[i][j])
+print_matrix(a)
+print()
+"""
+"""
+def print_matrix(a):
+    for row in a:
+        for x in row:
+            print(f"{x:4}", end = "")
+        print()
+
+from random import *
+n=int(input("Enter N: "))
+a = [[" " for j in range(n)] for i in range(n)]
+
+def V(a):
+    left = 0
+    right = n - 1
+    for i in range(n):
+        a[i][left] = "+"
+        a[i][right] = "+"
+        left += 1
+        right -= 1
+        if left > right:
+            break
+    return a
+
+def A(a):
+    for i in range(n):
+        for j in range(n):
+            if i == 0 or i == n//2 or j == 0 or j == n-1:
+                a[i][j] = "+"
+    return a
+
+def L(a):
+    for i in range(n):
+        for j in range(n):
+            if i == n-1 or j == 0 :
+                a[i][j] = "+"
+    return a
+
+def I(a):
+    for i in range(n):
+        for j in range(n):
+            if (i == 0 and j == n//2) or (i>=2 and j ==n//2):
+                a[i][j] = "+"
+    return a
+
+def D(a):
+    for i in range(n):
+        for j in range(n):
+            if j == n-1 or i ==n//2 or i == n-1 or (i>=n//2 and j==0) :
+                a[i][j] = "+"
+    return a
+
+def E(a):
+    for i in range(n):
+        for j in range(n):
+            if j == n-1 or i ==n//2 or i ==0 or i == n-1 or (i>=n//2 and j==0):
+                a[i][j] = "+"
+    return a
+
+print_matrix(V(a))
+print()
+a = [[" " for j in range(n)] for i in range(n)]
+print_matrix(A(a))
+print()
+a = [[" " for j in range(n)] for i in range(n)]
+print_matrix(L(a))
+print()
+a = [[" " for j in range(n)] for i in range(n)]
+print_matrix(I(a))
+print()
+a = [[" " for j in range(n)] for i in range(n)]
+print_matrix(D(a))
+print()
+a = [[" " for j in range(n)] for i in range(n)]
+print_matrix(E(a))
+"""
+#dictionary
+#task1
+"""
+dict_={
+    "Asia":{'population':15000,'area':1000000},
+    "Africa":{'population':30000,'area':1100000},
+    "Europe":{'population':17000,'area':1300000},
+    "North America":{'population':12000,'area':970000},
+    "South America":{'population':20000,'area':2300000},
+    "Australia/Oceania":{'population':11000,'area':890000},
+    "Asia":{'population':0,'area':1230000}
+    }
+new = {}
+for i in dict_:
+    for j in dict_[i]:
+        if j=="population":
+            if dict_[i][j]>=17000:
+                new[i]=dict_[i][j]
+print(new)
+"""
+#task2
+"""
+users ={
+    'maximus':'password1',
+    'asterix':'password2',
+    'starrex':'password3'
+    }
+while True:
+    print("Istifadeci adini daxil edin: " , end ='')
+    name=input()
+    if name in users:
+        print("Sifreni daxil edin: ",end= '')
+        sifre=input()
+        if users[name] == sifre:
+            print(f"Cavab: {users[name]} salam, sisteme xos gelmissiniz!")
+            break
+        else:
+            print("Sifreniz yanlisdir")
+            break
+    else:
+        print("Bele istifadeci movcud deyil")
+        break
+"""
+#task3
+'''
+def say(i,s):
+    c=0
+    for j in s:
+        if i == j:
+            c+=1
+    return c
+
+def cevir(s):
+    new={}
+    r=''
+    for i in s:
+        if i not in r:
+            new[i]=say(i,s)
+            r+=i
+    return new
+
+s=input("Enter str: ")
+print(cevir(s))
+'''
+#task4
+'''
+def cevir(a):
+    new={}
+    for i in s:
+        new[s[i]] = i
+    return new
+
+s={
+    'n1':'gmc',
+    'n2':'bmw',
+    'n3':'kia',
+    'n4':'bmw',
+    'n5':'audi'
+    }
+print(cevir(s))
+s=cevir(s)
+print(cevir(s))
+'''
+"""
+d = {
+    'n1':'gmc',
+    'n2':'bmw',
+    'n3':'kia',
+    'n4':'bmw',
+    'n5':'audi'
+    }
+
+l = []
+new_d = {}
+for i in d:
+    if d[i] not in l:
+        l+=[d[i]]
+        new_d[i] = d[i]
+    else:
+        new_d[i] = d[i]
+print(l)
+print(new_d)
+"""
+#task5
+"""
+def gpa(data):
+    new={}
+    for i in data:
+        orta = 0
+        for j in data[i]:
+            if j=='IELTS':
+                orta+=data[i][j]*10
+            if j=='IKT':
+                orta+=data[i][j]
+            if j=="Giris_bali":
+                orta+=data[i][j]/7
+        orta/=3
+        new[i] = orta
+    return new
+
+data = {
+    'Robert':{'IELTS':9.0,'IKT':98,'Giris_bali':690},
+    'Juliet':{'IELTS':7.0,'IKT':100,'Giris_bali':650},
+    'Tom':{'IELTS':6.5,'IKT':89,'Giris_bali':640},
+    }
+result=[]
+m=0
+c=0
+for i in data:
+    for j in data[i]:
+        if j=='IKT':
+            if data[i][j]>m:
+                k=i
+                m=data[i][j]
+        if j=="IELTS":
+            if data[i][j]>c:
+                t=i
+                c=data[i][j]
+result+=[k]
+result+=[t]
+print("Result",result)
+print()
+print('Result = ',gpa(data))
+"""
+#task6
+num = int(input("Enter number: "))
+
+d = {
+    'teklik'{
+        1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine'}
+    'onluq'{
+        1:'ten',2:'twenty',3:'thirdy',4:'fourty',5:'fivety',6:'sixty',7:'seventy',8:'eighty',9:'ninety'}
+    }
+#task7
+#YAZA BILMEDIKLERI 4,6,7
 
 
 
