@@ -1,0 +1,242 @@
+#additional sort tasks
+#task1
+"""
+def cem(a):
+    s=0
+    for i in a:
+        s+=int(i)
+    return s
+
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def mylist(a):
+    r=''
+    l=[]
+    for i in a:
+        if i!=" ":
+            r+=i
+        else:
+           l+=[r]
+           r=''
+    l+=[r]
+    return l
+
+def reqem(l):
+    rqms='1234567890'
+    q=''
+    for j in l:
+        if j in rqms:
+            q+=j
+    return q
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if cem(reqem(a[j+1]))>cem(reqem(a[j])):
+                a[j],a[j+1] = a[j+1] ,a[j]
+    return a
+
+def selection(a):
+    n=mylen(a)
+    for i in range(n-1):
+        min_i = 0
+        for j in range(i+1,n):
+            if cem(reqem(a[min_i]))>cem(reqem(a[j])):
+                min_i = j
+        if min_i!=i:
+            a[min_i] , a[i] = a[i] , a[min_i]
+    return a
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    
+    x=a[n//2]
+    b1=[b for b in a if cem(reqem(b))>cem(reqem(x))]
+    bx=[b for b in a if cem(reqem(b))==cem(reqem(x))]
+    b2=[b for b in a if cem(reqem(b))<cem(reqem(x))]
+
+    return quick(b1)+bx+quick(b2)
+
+text = input("Enter text: ")
+words = mylist(text)
+print(*quick(words))
+"""
+#task2
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def mylist(a):
+    l=[]
+    for i in a:
+        if i not in l:
+            l+=[i]
+    return l
+
+def mycount(i,a):
+    n=0
+    for j in a:
+        if j==i:
+            n+=1
+    return n
+
+def bubble(a,s):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if a[j+1]>a[j]:
+                a[j+1],a[j] = a[j],a[j+1]
+                s[j+1],s[j] = s[j],s[j+1]
+            
+    return a,s
+                
+text = input("Enter text: ")
+count=[]
+symbols=[]
+for i in text:
+    if i not in symbols:
+        count+=[mycount(i,text)]
+        symbols+=[i]
+print(count)
+print(*symbols)
+count,symbols = bubble(count,symbols)
+print(count)
+print(*symbols)
+"""
+#task3
+"""
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def say(a):
+    sait='aioue'
+    count=0
+    for i in a:
+        if i in sait:
+            count+=1
+    return count
+
+def mylist(a):
+    r=""
+    l=[]
+    for i in a:
+        if i!=" ":
+            r+=i
+        else:
+            l+=[r]
+            r=""
+    l+=[r]
+    return l
+
+def quick(a):
+    n=mylen(a)
+    if n<=1:
+        return a
+    x=a[n//2]
+    b1=[b for b in a if say(b)<say(x)]
+    bx=[b for b in a if say(b)==say(x)]
+    b2=[b for b in a if say(b)>say(x)]
+    return quick(b1)+bx+quick(b2)
+
+text = input("Enter text: ")
+l=mylist(text)
+l=quick(l)
+print("Result: ",*l)
+"""
+#task4
+
+#task1
+"""
+def say(a):
+    n=0
+    for i in a:
+        if i=="-":
+            n+=1
+    return n
+
+def check(a):
+    r=''
+    for i in a:
+        r=i+r
+    if a==r:
+        return True
+    return False
+
+def morze(n):
+    r=''
+    while n!=0:
+        if n%10==1:
+            r+="-"
+        else:
+            r+="."
+        n//=10
+    return r
+
+def ikilik(n):
+    q=0
+    k=0
+    while n!=0:
+        r=n%2
+        q+=r*10**k
+        k+=1
+        n//=2
+    return q
+
+n=int(input("Enter n: "))
+if check(morze(ikilik(n))):
+    print("Simmetrik Siqnal")
+else:
+    print("Qeyri-Simmetrik Siqnal")
+print(ikilik(n))
+print(morze(ikilik(n)))
+print(say(morze(ikilik(n))))
+"""
+#task2
+'''
+def mylist(a):
+    l=[]
+    for i in a:
+        l+=[i]
+    return l
+
+def mylen(a):
+    n=0
+    for i in a:
+        n+=1
+    return n
+
+def bubble(a):
+    n=mylen(a)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if a[j]>a[j+1]:
+                a[j],a[j+1] = a[j+1],a[j]
+    return a
+
+x=mylist(map(int,input("Ededleri aralarida bir bosluq olmaqla daxil edin: ").split()))
+w=[]
+for i in x:
+    c=0
+    k=0
+    while i!=0:
+        r=i%10
+        if r%2==0:
+            c+=i*10**k
+            k+=1
+        i//=10
+    w+=[c]
+print(w)
+'''
