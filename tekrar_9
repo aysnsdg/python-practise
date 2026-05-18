@@ -505,24 +505,6 @@ for i in range(n//2):
 print("Matris sonra : ")
 print_matrix(a)
 """
-#task4_f
-
-def print_matrix(a):
-    for row in a:
-        for x in row:
-            print(f"{x:4}", end = "")
-        print()
-
-from random import *
-n=int(input("Enter n : "))
-a=[[randint(10,99) for j in range(n)]for i in range(n)]
-print("Matris evvel : ")
-print_matrix(a)
-print()
-
-for i in range(n,0,-1):
-    for j in range(n):
-        a[i][j] = 
 #spiral
 """
 def print_matrix(a):
